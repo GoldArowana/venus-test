@@ -5,7 +5,7 @@ package cn.com.mx.ArtConcurrentBook.chapter05;
 
 import java.util.concurrent.locks.Lock;
 
-import chapter04.SleepUtils;
+import cn.com.mx.ArtConcurrentBook.chapter04.SleepUtils;
 
 /**
  * 10-11
