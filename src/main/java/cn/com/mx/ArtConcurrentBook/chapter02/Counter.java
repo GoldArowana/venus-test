@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * ������
+ * ??????
  * 
  * @author tengfei.fangtf
- * @version $Id: Snippet.java, v 0.1 2015-7-31 ����11:32:42 tengfei.fangtf Exp $
+ * @version $Id: Snippet.java, v 0.1 2015-7-31 ????11:32:42 tengfei.fangtf Exp $
  */
 public class Counter {
 
@@ -39,7 +39,7 @@ public class Counter {
             t.start();
 
         }
-        // �ȴ������߳�ִ�����
+        // ????????????????
         for (Thread t : ts) {
             try {
                 t.join();
@@ -54,7 +54,7 @@ public class Counter {
     }
 
     /**
-     * ʹ��CASʵ���̰߳�ȫ������
+     * ???CAS??????????????
      */
     private void safeCount() {
         for (;;) {
@@ -67,7 +67,7 @@ public class Counter {
     }
 
     /**
-     * ���̰߳�ȫ������
+     * ?????????????
      */
     private void count() {
         i++;
