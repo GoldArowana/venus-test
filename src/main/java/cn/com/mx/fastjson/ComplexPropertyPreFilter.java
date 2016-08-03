@@ -17,8 +17,9 @@ public class ComplexPropertyPreFilter implements PropertyFilter {
 				Set<String> fields = entry.getValue();
 				for(String field : fields) {
 					if(field.equals(name)){
-						return false;
-					}
+//                        System.out.println("sout");
+                        return false;
+                    }
 				}
 			}
 		}
