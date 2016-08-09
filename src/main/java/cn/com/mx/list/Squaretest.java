@@ -1,3 +1,4 @@
+package cn.com.mx.list;
 
 public class Squaretest {
 	private static int cout(int[][] a, int m, int n) {

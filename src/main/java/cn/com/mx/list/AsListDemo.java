@@ -1,4 +1,4 @@
-package test;
+package cn.com.mx.list;
 
 import java.util.Arrays;
 import java.util.List;
