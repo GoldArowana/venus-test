@@ -1,11 +1,11 @@
-package chapter04.socket.client.exceptions;
+package cn.com.mx.javatzb.chapter04.socket.client.exceptions;
 
 public class DirectNotExistsException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 	
 	public DirectNotExistsException(String directPath) {
-		super("ÔÚ±¾µØÃ»ÓÐÕÒµ½Ä¿Â¼£º" + directPath);
+		super("ï¿½Ú±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Òµï¿½Ä¿Â¼ï¿½ï¿½" + directPath);
 	}
 
 }

@@ -1,4 +1,4 @@
-package chapter07.reflect;
+package cn.com.mx.javatzb.chapter07.reflect;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;

@@ -1,4 +1,4 @@
-package chapter07.dynamic;
+package cn.com.mx.javatzb.chapter07.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
@@ -27,20 +27,20 @@ public class AOPHandler implements InvocationHandler {
 			throws IllegalArgumentException, IllegalAccessException,
 			InvocationTargetException {
 		//System.out.println(method.getDeclaringClass());
-		System.out.println("\n\n====>调用方法名：" + method.getName());
+		System.out.println("\n\n====>调用方法名" + method.getName());
 		Class<?>[] variables = method.getParameterTypes();
-		System.out.println("\n\t参数类型列表：\n");
+		System.out.println("\n\t参数类型列表\n");
 		for (Class<?> typevariables : variables) {
 			System.out.println("\t\t\t" + typevariables.getName());
 		}
-		println("\n\n\t传入参数值为：\n");
+		println("\n\n\t传入参数值");
 		for(Object arg : args) {
 			System.out.println("\t\t\t" + arg);
 		}
 		
 		Object result = method.invoke(target, args);
-		println("返回的参数为：", result);
-		println("返回值类型为：", method.getReturnType());
+		println("返回的参数为", result);
+		println("返回值类行为", method.getReturnType());
 		return result;
 	}
 }

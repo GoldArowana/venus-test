@@ -1,4 +1,4 @@
-package chapter07.reflect.editor;
+package cn.com.mx.javatzb.chapter07.reflect.editor;
 
 public class TestDO {
 

@@ -1,4 +1,4 @@
-package chapter07.annotation;
+package cn.com.mx.javatzb.chapter07.annotation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,21 +14,20 @@ public class TestMain {
 				new HashMap<String , String>() {
 					{
 						put("name" , "xieyuooo");
-						put("title" , "小胖");
+						put("title" , "灏忚儢");
 					}
 				},
 				new HashMap<String , String>() {
 					{
 						put("name" , "ffff");
-						put("title" , "标题2");
+						put("title" , "鏍囬2");
 					}
 				}
 		);
-		List<UserDO>users = new ArrayList<UserDO>(list.size());
+		List<UserDO> users = new ArrayList<UserDO>(list.size());
 		for(HashMap<String , String> row : list) {
 			users.add(ConvertionService.convertMapToBean(row, UserDO.class));
 		}
-		System.out.println();
-		//这里大家可以将users的列表进行输出
+		System.out.println(users.toString());
 	}
 }

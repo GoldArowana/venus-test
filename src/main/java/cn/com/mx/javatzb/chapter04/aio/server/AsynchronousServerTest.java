@@ -1,4 +1,4 @@
-package chapter04.aio.server;
+package cn.com.mx.javatzb.chapter04.aio.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -16,11 +16,11 @@ public class AsynchronousServerTest {
 		AsynchronousServerSocketChannel serverChannel = AsynchronousServerSocketChannel.open(group);
 		serverChannel.bind(new InetSocketAddress("localhost" , 8888) , 128);
 		Future<AsynchronousSocketChannel> future = serverChannel.accept();
-		//serverChannel.accept(attachment, handler)//¿É´«Èë²ÎÊýºÍ»Øµ÷µÄCompletionHandler´ïµ½ºÍFutureÒ»ÑùµÄÄ¿µÄ
+		//serverChannel.accept(attachment, handler)//ï¿½É´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í»Øµï¿½ï¿½ï¿½CompletionHandlerï¿½ïµ½ï¿½ï¿½FutureÒ»ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½
 		process(future.get());
 	}
 	
 	private static void process(AsynchronousSocketChannel asynchronousSocketChannel) {
-		/*µÃµ½Ò»¸öSocketChannelºóµÄ²Ù×÷*/
+		/*ï¿½Ãµï¿½Ò»ï¿½ï¿½SocketChannelï¿½ï¿½Ä²ï¿½ï¿½ï¿½*/
 	}
 }

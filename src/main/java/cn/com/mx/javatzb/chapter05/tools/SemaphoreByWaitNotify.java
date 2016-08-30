@@ -1,4 +1,4 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -18,15 +18,15 @@ public class SemaphoreByWaitNotify {
 		for (int i = 0; i < THREAD_COUNT; i++) {
 			new Thread(String.valueOf(i)) {
 				 public void run() {
-					tryToLock();//³¢ÊÔ»ñÈ¡µ½Ö´ÐÐÈ¨ÏÞ
-					System.out.println(this.getName() + "======ÎÒ¿ªÊ¼×ö²Ù×÷ÁË£¡");
+					tryToLock();//ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½Ö´ï¿½ï¿½È¨ï¿½ï¿½
+					System.out.println(this.getName() + "======ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
 					try {
 						Thread.sleep(100 + (radom.nextInt() & 3000));
 					}catch(InterruptedException e) {
 						e.printStackTrace();
 					}
-					System.out.println(this.getName() + "======²Ù×÷½áÊøÁË£¡");
-					tryToUnLock();//ÊÍ·ÅËø
+					System.out.println(this.getName() + "======ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
+					tryToUnLock();//ï¿½Í·ï¿½ï¿½ï¿½
 				}
 			}.start();
 		}
@@ -44,9 +44,9 @@ public class SemaphoreByWaitNotify {
 		int nowValue = NOW_CALL_COUNT.get(); 
 		while(true) {
 			if(nowValue < QUERY_MAX_LENGTH && NOW_CALL_COUNT.compareAndSet(nowValue, nowValue + 1)) {  
-                break;//»ñÈ¡µ½ÁË  
+                break;//ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½  
             }
-			if(tryTimes % 3 == 0) {//³¢ÊÔ3´ÎÈô²»³É¹¦ÔòÐÝÃß
+			if(tryTimes % 3 == 0) {//ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				waitForObjectNotify();
 			}
 			nowValue = NOW_CALL_COUNT.get();
@@ -57,7 +57,7 @@ public class SemaphoreByWaitNotify {
 	private static void waitForObjectNotify() {
 		synchronized(LOCK_OBJECT) {
 			try {
-				LOCK_OBJECT.wait(500);//×î¶àµÈ´ý500msºóÖØÊÔ
+				LOCK_OBJECT.wait(500);//ï¿½ï¿½ï¿½È´ï¿½500msï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			}catch(InterruptedException e) {
 				e.printStackTrace();
 			}

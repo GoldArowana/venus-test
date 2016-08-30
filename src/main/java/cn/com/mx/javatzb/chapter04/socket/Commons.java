@@ -1,4 +1,4 @@
-package chapter04.socket;
+package cn.com.mx.javatzb.chapter04.socket;
 
 import java.io.Closeable;
 import java.io.IOException;
@@ -52,15 +52,15 @@ public class Commons {
 	
 	public final static int DEFAULT_BUFFER_LENGTH = 8 * 1024;
 	
-	public final static String HELP_SHOW = "\n\n\t\t²Ù×÷·½Ê½£º\n" +
-	"\t\t1¡¢´«ËÍÆÕÍ¨µÄ×Ö·û´®£¬ÀýÈç£º\"sendMsg ÄãºÃ°¡£¡\" ¼´¿É¡£\n" +
-	"\t\t2¡¢´«ËÍÎÄ±¾ÎÄ¼þ£¬ÀýÈç£º\"sendFile /home/xieyuooo/a.sql charset=utf-8\"\n" +
-	"\t\t3¡¢´«ËÍ·ÇÎÄ±¾ÎÄ¼þ£¬ÀýÈç£º\"sendBFile /home/xieyuooo/aaa.jpg\"\n" +
-	"\t\t4¡¢ÏÂÔØÎÄ¼þ£¬ÀýÈç£º\"getFile aaa.jpg d:/download/\" ÆäÖÐd:/download/ÎªÏÂÔØµ½±¾µØµÄÄ¿Â¼£¬ÈôÎ´Ö¸¶¨£¬ÔòÏÂÔØµ½user.dirÏÂÃæ\n" +
-	"\t\t5¡¢help Êä³öÏà¹ØµÄÊ¹ÓÃ°ïÖú\n" +
-	"\t\t6¡¢exit ÍË³ö¿Í»§¶Ë";
+	public final static String HELP_SHOW = "\n\n\t\tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½\n" +
+	"\t\t1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ç£º\"sendMsg ï¿½ï¿½Ã°ï¿½ï¿½ï¿½\" ï¿½ï¿½ï¿½É¡ï¿½\n" +
+	"\t\t2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£º\"sendFile /home/xieyuooo/a.sql charset=utf-8\"\n" +
+	"\t\t3ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½Ä±ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£º\"sendBFile /home/xieyuooo/aaa.jpg\"\n" +
+	"\t\t4ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ç£º\"getFile aaa.jpg d:/download/\" ï¿½ï¿½ï¿½ï¿½d:/download/Îªï¿½ï¿½ï¿½Øµï¿½ï¿½ï¿½ï¿½Øµï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½Î´Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½user.dirï¿½ï¿½ï¿½ï¿½\n" +
+	"\t\t5ï¿½ï¿½help ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½Ê¹ï¿½Ã°ï¿½ï¿½ï¿½\n" +
+	"\t\t6ï¿½ï¿½exit ï¿½Ë³ï¿½ï¿½Í»ï¿½ï¿½ï¿½";
 	
-	public final static String ERROR_MESSAGE_FORMAT = "´íÎóµÄÏûÏ¢¸ñÊ½£¬Çë²Î¿´ demo£º\n" + HELP_SHOW;
+	public final static String ERROR_MESSAGE_FORMAT = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½Î¿ï¿½ demoï¿½ï¿½\n" + HELP_SHOW;
 	
 	private final static List<CharsetByteRelative> CHASET_BYTE_LIST = Arrays.asList(
 			new CharsetByteRelative("utf8" , (byte)1) , 
@@ -99,7 +99,7 @@ public class Commons {
 				closeable.close();
 			}
 		}catch(IOException e) {
-			/*¿ÉÒÔ×Ô¼ºÔö¼ÓÆäËûµÄ´¦Àí*/
+			/*ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½*/
 		}
 	}
 	
@@ -117,7 +117,7 @@ public class Commons {
 				return charsetByteRelative.getCharsetByte();
 			}
 		}
-		throw new RuntimeException("²»Ö§³Ö×Ö·û¼¯£º" + charset);
+		throw new RuntimeException("ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Ö·ï¿½" + charset);
 	}
 	
 	public static String getCharsetNameByCode(byte charsetCode) {
@@ -126,7 +126,7 @@ public class Commons {
 				return charsetByteRelative.getCharset();
 			}
 		}
-		throw new RuntimeException("²»Ö§³Ö×Ö·û¼¯±àºÅ£º" + charsetCode);
+		throw new RuntimeException("ï¿½ï¿½Ö§ï¿½ï¿½ï¿½Ö·ï¿½ï¿½Å£ï¿½" + charsetCode);
 	}
 	
 	public static Class<? extends Sendable> findSendableClassByOrder(String order) {

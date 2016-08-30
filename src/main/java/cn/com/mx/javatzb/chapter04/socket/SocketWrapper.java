@@ -1,4 +1,4 @@
-package chapter04.socket;
+package cn.com.mx.javatzb.chapter04.socket;
 
 import java.io.Closeable;
 import java.io.DataInputStream;
@@ -112,13 +112,13 @@ public class SocketWrapper implements Closeable {
 				byte []bytes = new byte[PAGE_SIZE];
 				int allLength = 0;
 				int length = fileInputStream.read(bytes);
-				while(length > 0) {//³¬¹ýÒ»¶¨´óÐ¡ÎÄ¼þ£¬·Ö¶Î´«ËÍ
+				while(length > 0) {//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ö¶Î´ï¿½ï¿½ï¿½
 					allLength += length;
 					this.write(bytes , length);
 					length = fileInputStream.read(bytes);
 					print(".");
 				}
-				println("Êµ¼Ê·¢ËÍÎÄ¼þ³¤¶ÈÎª£º" + allLength);
+				println("Êµï¿½Ê·ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½" + allLength);
 			}else {
 				byte []bytes = new byte[(int)fileLenth];
 				fileInputStream.read(bytes);

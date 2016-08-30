@@ -1,4 +1,4 @@
-package chapter07.annotation;
+package cn.com.mx.javatzb.chapter07.annotation;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -19,7 +19,7 @@ public class ConvertionService {
         while(clazzTemp != Object.class) {
         	Field []fields = clazzTemp.getDeclaredFields();
         	for(Field field : fields) {
-        		if(!fieldNames.contains(field.getName())) {//Í¬ÃûÊôĞÔ×ÓÀà¸²¸Ç
+        		if(!fieldNames.contains(field.getName())) {//Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½à¸²ï¿½ï¿½
         			fieldList.add(field);
         			fieldNames.add(field.getName());
         		}
@@ -39,7 +39,7 @@ public class ConvertionService {
 				if(!field.isAccessible()) field.setAccessible(true);
 				Column columnAnnotation = field.getAnnotation(Column.class);
 				if(columnAnnotation != null) {
-					String value = row.get(columnAnnotation.name());//Í¨¹ıannotation×¢½âµÄÃû³ÆÀ´»ñÈ¡¶ÔÓ¦µÄÖµ
+					String value = row.get(columnAnnotation.name());//é€šè¿‡æ³¨è§£åç§°è·å–å¯¹åº”çš„å€¼
 					Class <?>fieldType = field.getType();
 					if(fieldType == String.class) {
 						field.set(object, value);
@@ -52,10 +52,10 @@ public class ConvertionService {
 					}else if(fieldType == long.class) {
 						field.setLong(object , getLong(value));
 					}/*
-						¼ÌĞøµÄÊı¾İÀàĞÍ´ó¼Ò¿ÉÒÔ×Ô¼º²¹³ä
+						ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í´ï¿½Ò¿ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½
 					*/
 				}else {
-					/*Ã»ÓĞannotationµÄ´úÂë½»¸ø´ó¼Ò×Ô¼ºÈ¥Íê³ÉÁË*/
+					/*Ã»ï¿½ï¿½annotationï¿½Ä´ï¿½ï¿½ë½»ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½*/
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-package chapter07.annotation;
+package cn.com.mx.javatzb.chapter07.annotation;
 
 public class UserDO {
 	
@@ -38,6 +38,12 @@ public class UserDO {
 
 	public String getEmpId() {
 		return empId;
+	}
+
+	@Override
+	public String toString() {
+		return "UserDO [userName=" + userName + ", userTitle=" + userTitle + ", loginTimes=" + loginTimes + ", empId="
+				+ empId + "]";
 	}
 
 	public void setEmpId(String empId) {

@@ -1,4 +1,4 @@
-package chapter07.dynamic;
+package cn.com.mx.javatzb.chapter07.dynamic;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -9,7 +9,7 @@ public class BeanFactory {
 		throws InstantiationException, IllegalAccessException,
 			   ClassNotFoundException {
 		Object obj = Class.forName(className).newInstance();
-		InvocationHandler handler = new AOPHandler(obj);//¶¨Òå¹ýÂËÆ÷
+		InvocationHandler handler = new AOPHandler(obj);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		return Proxy.newProxyInstance(obj.getClass().getClassLoader(), 
 				obj.getClass().getInterfaces(), handler);
 	}

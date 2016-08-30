@@ -1,11 +1,11 @@
-package chapter04.socket.client.exceptions;
+package cn.com.mx.javatzb.chapter04.socket.client.exceptions;
 
 public class DownloadNotExistsFileException extends RuntimeException {
 
 	private static final long serialVersionUID = 2969567696674112542L;
 	
 	public DownloadNotExistsFileException(String path) {
-		super("ÎŞ·¨ÏÂÔØÎÄ¼ş£º" + path + "£¬ÒòÎª·şÎñÆ÷¶Ë²»´æÔÚÕâ¸öÎÄ¼ş....");
+		super("ï¿½Ş·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½" + path + "ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½....");
 	}
 
 }

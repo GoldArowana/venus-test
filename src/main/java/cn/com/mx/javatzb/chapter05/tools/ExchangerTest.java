@@ -1,4 +1,4 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.util.concurrent.Exchanger;
 
@@ -10,11 +10,11 @@ public class ExchangerTest {
 			final Integer num = i;
 			new Thread() {
 				public void run() {
-					System.out.println("ÎÒÊÇÏß³Ì£ºThread_" + this.getName() + " ÎÒµÄÊý¾ÝÊÇ£º" + num);
+					System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½Thread_" + this.getName() + " ï¿½Òµï¿½ï¿½ï¿½ï¿½ï¿½Ç£ï¿½" + num);
 					try {
 						Integer exchangeNum = exchanger.exchange(num);
 						Thread.sleep(1000);
-						System.out.println("ÎÒÊÇÏß³Ì£ºThread_" + this.getName() + " ×î³õµÄÊý¾ÝÎª£º" + num + " , ½»»»ºóµÄÊý¾ÝÎª£º" + exchangeNum);
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½Thread_" + this.getName() + " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½" + num + " , ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½" + exchangeNum);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

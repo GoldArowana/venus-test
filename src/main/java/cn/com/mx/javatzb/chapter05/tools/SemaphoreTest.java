@@ -1,4 +1,4 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -27,9 +27,9 @@ public class SemaphoreTest {
 					try {
 						MAX_SEMA_PHORE.acquire();
 						acquired = true;
-						System.out.println("ÎÒÊÇÏß³Ì£º" + num + " ÎÒ»ñµÃÁËÊ¹ÓÃÈ¨£¡" + getDateTime());
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + num + " ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½È¨ï¿½ï¿½" + getDateTime());
 						Thread.sleep(1000 + (radom.nextInt() & 5000));
-						System.out.println("ÎÒÊÇÏß³Ì£º" + num + " ÎÒÖ´ĞĞÍêÁË£¡" + getDateTime());
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + num + " ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½" + getDateTime());
 					} catch (Exception e) {
 						e.printStackTrace();
 					} finally {

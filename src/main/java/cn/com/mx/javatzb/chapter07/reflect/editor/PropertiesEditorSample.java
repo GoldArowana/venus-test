@@ -1,4 +1,4 @@
-package chapter07.reflect.editor;
+package cn.com.mx.javatzb.chapter07.reflect.editor;
 
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -14,7 +14,7 @@ public class PropertiesEditorSample {
 	
 	private final static Field[] TEST_FILEDS = TestDO.class.getDeclaredFields();
 	
-	static {//×¢²áEditor
+	static {//×¢ï¿½ï¿½Editor
 		PropertyEditorManager.registerEditor(NodeDO.class, NodeDOEditor.class);
 	}
 
@@ -24,10 +24,10 @@ public class PropertiesEditorSample {
 		Map<String , String> parameter = new HashMap<String , String>() {
 			private static final long serialVersionUID = 1L;
 			{
-				put("nodeName" , "Ð¡ÅÖ²âÊÔ");
+				put("nodeName" , "Ð¡ï¿½Ö²ï¿½ï¿½ï¿½");
 				put("nodeDO" , "xieyuooo|pangpang@qq.com|2012-12-21 12:21:12");
 			}
-		};//Ä£Äâ²ÎÊýÐÅÏ¢£¬¾ÍÏñrequesetµÄParameterMapÀàËÆ
+		};//Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½requesetï¿½ï¿½ParameterMapï¿½ï¿½ï¿½ï¿½
 		TestDO testDO = convertParameterToDO(parameter);
 		System.out.println(testDO.getNodeName());
 		System.out.println(testDO.getNodeDO());
@@ -43,7 +43,7 @@ public class PropertiesEditorSample {
 			if(field.getType() == String.class) {
 				method.invoke(testDO, parameter.get(field.getName()));
 			}else {
-				PropertyEditor propertyEditor = PropertyEditorManager.findEditor(field.getType());//²éÕÒEditor
+				PropertyEditor propertyEditor = PropertyEditorManager.findEditor(field.getType());//ï¿½ï¿½ï¿½ï¿½Editor
 				if(propertyEditor != null) {
 					propertyEditor.setAsText(parameter.get(field.getName()));
 					method.invoke(testDO, propertyEditor.getValue());

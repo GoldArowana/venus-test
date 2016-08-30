@@ -1,4 +1,4 @@
-package chapter04.nio.server;
+package cn.com.mx.javatzb.chapter04.nio.server;
 
 import static chapter04.socket.Commons.DEFAULT_MESSAGE_CHARSET;
 import static chapter04.socket.Commons.closeStreams;
@@ -24,55 +24,55 @@ public class SelectionKeyProcessor {
 
 	public void processKey() throws IOException {
 		try {
-			if (selectionKey.isAcceptable()) {//½ÓÊÕ
+			if (selectionKey.isAcceptable()) {//ï¿½ï¿½ï¿½ï¿½
 				processAccept();
-			} else if (selectionKey.isReadable()) {//¶ÁÈ¡
+			} else if (selectionKey.isReadable()) {//ï¿½ï¿½È¡
 				processRead();
 			} else if (selectionKey.isWritable()) {//Ð´
 				processWrite();
 			}
-		}catch(IOException e) {//IOÒì³£ÐèÒª¹Ø±Õ£¬·ñÔò»áµ¼ÖÂÎÞÏÞÖÆµØ±¨´í£¬ÒòÎªÍ¨µÀÃ»½áÊø£¬¾Í»áÒ»Ö±±»¼ì²â
+		}catch(IOException e) {//IOï¿½ì³£ï¿½ï¿½Òªï¿½Ø±Õ£ï¿½ï¿½ï¿½ï¿½ï¿½áµ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆµØ±ï¿½ï¿½?ï¿½ï¿½ÎªÍ¨ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Í»ï¿½Ò»Ö±ï¿½ï¿½ï¿½ï¿½ï¿½
 			SelectableChannel channel = selectionKey.channel();
 			if(channel instanceof SocketChannel) {
 				DownloadFileProcessor downloadFileProcessor = (DownloadFileProcessor)selectionKey.attachment();
 				closeStreams(downloadFileProcessor , channel);
-				logInfo("ÏÂÔØÓÉÓÚIOÒì³££¬½áÊø.....");
+				logInfo("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IOï¿½ì³£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.....");
 			}
 		}
 	}
 
 	private void processAccept() throws IOException {
-		//System.out.println("Ò»¸öÐÂµÄÁ¬½Ó................");
-		ServerSocketChannel server = (ServerSocketChannel) selectionKey.channel();//ÕâÀï»ñÈ¡µ½Server´ò¿ªµÄÍ¨µÀ
-		SocketChannel channel = server.accept();//½ÓÊÜÒ»¸öÇëÇóµÄChannelµÄÍ¨µÀ
-		channel.configureBlocking(false);//½«½ÓÊÜÇëÇóµÄÍ¨µÀÅäÖÃÎª·Ç×èÈûÄ£Ê½
+		//System.out.println("Ò»ï¿½ï¿½ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½................");
+		ServerSocketChannel server = (ServerSocketChannel) selectionKey.channel();//ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½Serverï¿½ò¿ªµï¿½Í¨ï¿½ï¿½
+		SocketChannel channel = server.accept();//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Channelï¿½ï¿½Í¨ï¿½ï¿½
+		channel.configureBlocking(false);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
 		//System.out.println(channel.socket().getSendBufferSize());
 		//channel.socket().setSendBufferSize(16 * 1024);
-		channel.register(selector, SelectionKey.OP_READ);//½«Õâ¸öÍ¨µÀ×¢²áÒ»¸ö¶ÁÈ¡ÊÂ¼þ
+		channel.register(selector, SelectionKey.OP_READ);//ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½×¢ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½È¡ï¿½Â¼ï¿½
 	}
 
 	private void processRead() throws IOException {
-		SocketChannel channel = (SocketChannel)selectionKey.channel();//´ËÊ±È¡³öµÄÎªprocessAccept()×¢²áÁËµÄÍ¨µÀ
+		SocketChannel channel = (SocketChannel)selectionKey.channel();//ï¿½ï¿½Ê±È¡ï¿½ï¿½ï¿½ï¿½ÎªprocessAccept()×¢ï¿½ï¿½ï¿½Ëµï¿½Í¨ï¿½ï¿½
 		channel.read(NIOServer.CLIENT_BYTE_BUFFER);
-		//ÒÔÏÂ×ª»»×Ö·û¼¯¹ý³ÌÒ²¿ÉÒÔ×Ô¼ºÊ¹ÓÃ×ª»»Æ÷£ºCharsetDecoderÀ´Íê³É
+		//ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Ê¹ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CharsetDecoderï¿½ï¿½ï¿½ï¿½ï¿½
 		byte[]bytes = new byte[NIOServer.CLIENT_BYTE_BUFFER.position()];
-		NIOServer.CLIENT_BYTE_BUFFER.flip();//½«Ö¸ÕëÖØÐÂÆ«ÒÆ£¬²ÅÄÜµÃµ½×¼È·µÄÊý¾Ý
-		NIOServer.CLIENT_BYTE_BUFFER.get(bytes);//¶ÁÈ¡µ½ByteÖÐ
+		NIOServer.CLIENT_BYTE_BUFFER.flip();//ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ÜµÃµï¿½×¼È·ï¿½ï¿½ï¿½ï¿½ï¿½
+		NIOServer.CLIENT_BYTE_BUFFER.get(bytes);//ï¿½ï¿½È¡ï¿½ï¿½Byteï¿½ï¿½
 		NIOServer.CLIENT_BYTE_BUFFER.clear();
-		logInfo("¿Í»§¶ËÏûÏ¢ >>" + new String(bytes , DEFAULT_MESSAGE_CHARSET));//×ª»»Êä³ö×Ö·û¼¯
+		logInfo("ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ >>" + new String(bytes , DEFAULT_MESSAGE_CHARSET));//×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½
 
-		SelectionKey writeSelectionKey = channel.register(selector , SelectionKey.OP_WRITE);//×¢²áÒ»¸öÐ´µÄÑ¡ÔñÆ÷
-		writeSelectionKey.attach(new DownloadFileProcessor());//ÕâÀï¿ÉÒÔ°ó¶¨Ò»¸ö¶ÔÏóµ½selectionKeyµ±ÖÐ£¬´¥·¢ÏàÓ¦ÊÂ¼þµÄÊ±ºò£¬¿ÉÒÔ½«ÆäÈ¡³ö
+		SelectionKey writeSelectionKey = channel.register(selector , SelectionKey.OP_WRITE);//×¢ï¿½ï¿½Ò»ï¿½ï¿½Ð´ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
+		writeSelectionKey.attach(new DownloadFileProcessor());//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô°ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½selectionKeyï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Â¼ï¿½ï¿½ï¿½Ê±ï¿½ò£¬¿ï¿½ï¿½Ô½ï¿½ï¿½ï¿½È¡ï¿½ï¿½
 	}
 
 	private void processWrite() throws IOException {
-		//System.out.println("´¦ÀíÐ´²Ù×÷");
+		//System.out.println("ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½");
 		SocketChannel channel = (SocketChannel)selectionKey.channel();
-		DownloadFileProcessor downloadFileProcessor = (DownloadFileProcessor)selectionKey.attachment();//»ñÈ¡×¢²áWRITEÊÂ¼þµÄ¶ÔÏó
+		DownloadFileProcessor downloadFileProcessor = (DownloadFileProcessor)selectionKey.attachment();//ï¿½ï¿½È¡×¢ï¿½ï¿½WRITEï¿½Â¼ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½
 		int count = downloadFileProcessor.read();
 		if(count <= 0) {
 			closeStreams(downloadFileProcessor , channel);
-			logInfo("ÏÂÔØ½áÊø.....");
+			logInfo("ï¿½ï¿½ï¿½Ø½ï¿½ï¿½ï¿½.....");
 		}else {
 			channel.write(downloadFileProcessor.getFileByteBuffer());
 		}

@@ -1,12 +1,10 @@
-package chapter04.aio.file;
+package cn.com.mx.javatzb.chapter04.aio.file;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.channels.FileChannel;
-
-import static chapter04.socket.Commons.*;
 
 public class FileReadCompletion implements
 		CompletionHandler<Integer, FileChannel> {
@@ -35,7 +33,7 @@ public class FileReadCompletion implements
 				int writeLength = writeChannel.write(byteBuffer, nowPosition);
 				nowPosition += writeLength;
 			} catch (IOException e) {
-				/*¿ÉÒÔ¼ÓÈë×Ô¼ºµÄ´¦ÀíÅ¶*/
+				/*ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä´ï¿½ï¿½ï¿½Å¶*/
 			}
 			byteBuffer.clear();
 			readFileChannel.read(byteBuffer, nowPosition , writeChannel , this);

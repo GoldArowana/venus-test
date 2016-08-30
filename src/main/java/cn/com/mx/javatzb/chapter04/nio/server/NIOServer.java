@@ -1,4 +1,4 @@
-package chapter04.nio.server;
+package cn.com.mx.javatzb.chapter04.nio.server;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -7,8 +7,6 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.util.Set;
-
-import static chapter04.socket.Commons.*;
 
 public class NIOServer {
 
@@ -20,7 +18,7 @@ public class NIOServer {
 	
 	public static void main(String []args) throws IOException {
 		Selector selector = createSelector();
-		logInfo("·þÎñÆ÷¶ËÒÑ¾­ÒÑ¾­´ò¿ª¶Ë¿Ú£º" + DEFAULT_PORT);
+		logInfo("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½Ñ¾ï¿½ï¿½ò¿ª¶Ë¿Ú£ï¿½" + DEFAULT_PORT);
 		try {
 			while (true) {
 				selector.select();
@@ -38,11 +36,11 @@ public class NIOServer {
 	}
 	
 	private static Selector createSelector() throws IOException {
-		ServerSocketChannel server = ServerSocketChannel.open();  //´ò¿ªServerSocketChannel
-		Selector selector = Selector.open();                      //´´½¨Ò»¸öÑ¡ÔñÆ÷
-		server.socket().bind(new InetSocketAddress(DEFAULT_PORT)); //ChannelÖÐ°ó¶¨Ò»¸ö¶Ë¿Ú
-		server.configureBlocking(false);                           //°ó¶¨Îª·Ç×èÈûÄ£Ê½
-		server.register(selector, SelectionKey.OP_ACCEPT);         //Ñ¡ÔñÆ÷×¢²áÔÚChannelÉÏ£¬  ×¢²á½ÓÊÕÊÂ¼þ(ÒòÎª·þÎñÆ÷¶ËÊ×ÏÈÊÇ½ÓÊÕÇëÇó)
+		ServerSocketChannel server = ServerSocketChannel.open();  //ï¿½ï¿½ServerSocketChannel
+		Selector selector = Selector.open();                      //ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½
+		server.socket().bind(new InetSocketAddress(DEFAULT_PORT)); //Channelï¿½Ð°ï¿½Ò»ï¿½ï¿½ï¿½Ë¿ï¿½
+		server.configureBlocking(false);                           //ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+		server.register(selector, SelectionKey.OP_ACCEPT);         //Ñ¡ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½Channelï¿½Ï£ï¿½  ×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½(ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
 		return selector;
 	}
 }

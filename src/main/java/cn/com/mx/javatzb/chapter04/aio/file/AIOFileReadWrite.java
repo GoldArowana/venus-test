@@ -1,4 +1,4 @@
-package chapter04.aio.file;
+package cn.com.mx.javatzb.chapter04.aio.file;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,6 +17,6 @@ public class AIOFileReadWrite {
 		ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
 		FileReadCompletion completion = new FileReadCompletion(byteBuffer , readChannel);
 		readChannel.read(byteBuffer, 0l , writeChannel , completion);
-		System.in.read();//ÈÃ³ÌĞòÔİÍ£ÔÚÕâÀï£¬·ñÔò»áÖ±½ÓÍË³ö
+		System.in.read();//ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½Ë³ï¿½
 	}
 }

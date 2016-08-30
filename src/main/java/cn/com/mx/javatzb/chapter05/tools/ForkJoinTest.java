@@ -1,4 +1,4 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.util.Random;
 import java.util.concurrent.ExecutionException;
@@ -6,7 +6,7 @@ import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveTask;
 
 /**
- * Èç¹ûÒªÔËÐÐÕâ¸öÀý×Ó£¬Çë½«JDK»»µ½1.7ÒÔÉÏµÄ°æ±¾
+ * ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ë½«JDKï¿½ï¿½ï¿½ï¿½1.7ï¿½ï¿½ï¿½ÏµÄ°æ±¾
  * @author zhongyin.xy
  *
  */
@@ -47,7 +47,7 @@ public class ForkJoinTest {
 				int v = TEST_INT_ARRAY[startIndex];
 				for(int i = startIndex + 1 ; i < endIndex ; i++) {
 					/*
-					//ÕâÀï¿ÉÒÔÍ¨¹ýÐÝÃßÀ´´ú±íÒ»¸ö¶¯×÷ÐèÒª»¨·ÑÒ»µãÊ±¼ä£¬·ñÔò¿´²»³öÌ«¶àÐ§¹û
+					//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ò¿´²ï¿½ï¿½ï¿½Ì«ï¿½ï¿½Ð§ï¿½ï¿½
 					try {
 						Thread.sleep(DEFAULT_RANDOM.nextInt() & 5000);
 					} catch (InterruptedException e) {
@@ -57,9 +57,9 @@ public class ForkJoinTest {
 				}
 				return v;
 			}
-			//Ã¿´Î·Ö½âÎª×î¶à5¸ö×ÓÈÎÎñ
+			//Ã¿ï¿½Î·Ö½ï¿½Îªï¿½ï¿½ï¿½5ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			MaxComputer []maxComputer = new MaxComputer[5];
-			int perConnt = count / FORK_NUM_PER;//Ã¿¸öÈÎÎñµÄÊýÁ¿
+			int perConnt = count / FORK_NUM_PER;//Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			int min = startIndex , max = startIndex;
 			for(int i = 0 ; i < FORK_NUM_PER ; i++) {
 				max += perConnt;

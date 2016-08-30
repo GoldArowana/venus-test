@@ -1,4 +1,4 @@
-package chapter04.socket.client.component;
+package cn.com.mx.javatzb.chapter04.socket.client.component;
 
 public class CharsetByteRelative {
 

@@ -1,4 +1,4 @@
-package chapter07.annotation;
+package cn.com.mx.javatzb.chapter07.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

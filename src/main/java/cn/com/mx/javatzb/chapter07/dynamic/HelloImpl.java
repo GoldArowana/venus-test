@@ -1,4 +1,4 @@
-package chapter07.dynamic;
+package cn.com.mx.javatzb.chapter07.dynamic;
 
 public class HelloImpl implements HelloInterface2 , HelloInterface {
 

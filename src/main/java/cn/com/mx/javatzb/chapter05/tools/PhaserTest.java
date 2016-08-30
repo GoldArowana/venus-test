@@ -1,9 +1,9 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.util.concurrent.Phaser;
 
 /**
- * ´Ë´úÂëÐèÒªÔÚJDK 1.7ÒÔÉÏµÄ°æ±¾ÔËÐÐ
+ * ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½JDK 1.7ï¿½ï¿½ï¿½ÏµÄ°æ±¾ï¿½ï¿½ï¿½ï¿½
  * @author xieyuooo
  *
  */
@@ -17,26 +17,26 @@ public class PhaserTest {
 			final int num = i;
 			Thread t = new Thread() {
 				public void run() {
-					System.out.println("µ±Ç°Ïß³Ì±àºÅ:" + num + " ×¼±¸¿ªÊ¼Ö´ÐÐ \t" + System.currentTimeMillis());
+					System.out.println("ï¿½ï¿½Ç°ï¿½ß³Ì±ï¿½ï¿½:" + num + " ×¼ï¿½ï¿½ï¿½ï¿½Ê¼Ö´ï¿½ï¿½ \t" + System.currentTimeMillis());
 					phaser.arriveAndAwaitAdvance();
-					System.out.println("Ö´ÐÐÁÐ±í:" + num + " ¿ªÊ¼Ö´ÐÐ \t" + System.currentTimeMillis());
+					System.out.println("Ö´ï¿½ï¿½ï¿½Ð±ï¿½:" + num + " ï¿½ï¿½Ê¼Ö´ï¿½ï¿½ \t" + System.currentTimeMillis());
 					try {
 						Thread.sleep(this.hashCode() & 2000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
 					phaser.arriveAndDeregister();
-					//phaser.arriveAndDeregister();//×ö¶à´Î¾Í»áÓÐÎÊÌâ
-					System.out.println("Ïß³Ì£º" + num + " Ö´ÐÐÍê³É \t" + System.currentTimeMillis());
+					//phaser.arriveAndDeregister();//ï¿½ï¿½ï¿½ï¿½Î¾Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+					System.out.println("ï¿½ß³Ì£ï¿½" + num + " Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ \t" + System.currentTimeMillis());
 				}
 			};
 			Thread.sleep(1234);
-			System.out.println("Î´´ïarriveAndAwaitAdvance¸öÊý£º" + phaser.getUnarrivedParties());
+			System.out.println("Î´ï¿½ï¿½arriveAndAwaitAdvanceï¿½ï¿½ï¿½ï¿½" + phaser.getUnarrivedParties());
 			t.start();
 		}
-		System.out.println("×¢²á×Ü¸öÊý£º" + phaser.getRegisteredParties());
+		System.out.println("×¢ï¿½ï¿½ï¿½Ü¸ï¿½ï¿½ï¿½" + phaser.getRegisteredParties());
 		while(!phaser.isTerminated()) {
-			System.out.println("´ïµ½¸öÊý£º" + phaser.getRegisteredParties() + "\t" + System.currentTimeMillis());
+			System.out.println("ï¿½ïµ½ï¿½ï¿½ï¿½ï¿½" + phaser.getRegisteredParties() + "\t" + System.currentTimeMillis());
 			Thread.sleep(20);
 		}
 		System.out.println("end .....");

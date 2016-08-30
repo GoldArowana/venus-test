@@ -1,4 +1,4 @@
-package chapter07.reflect;
+package cn.com.mx.javatzb.chapter07.reflect;
 
 import java.lang.reflect.Method;
 
@@ -13,6 +13,6 @@ public class MethodInvokeSample {
 	
 	
 	public static String test(String a , int b) {
-		return "传入参数1：" + a + ",传入的参数2：" + b;
+		return "第一个参数" + a + ",第二个参数" + b;
 	}
 }

@@ -1,4 +1,4 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.util.Random;
 import java.util.concurrent.Callable;

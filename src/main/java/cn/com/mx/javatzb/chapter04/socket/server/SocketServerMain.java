@@ -1,4 +1,4 @@
-package chapter04.socket.server;
+package cn.com.mx.javatzb.chapter04.socket.server;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,7 +16,7 @@ public class SocketServerMain {
 	public static void main(String []args) throws IOException {
 		initPath();
 		ServerSocket serverSocket = new ServerSocket(8888);
-		logInfo("¶Ë¿ÚÒÑ¾­´ò¿ªÎª8888£¬¿ªÊ¼×¼±¸½ÓÊÜÊý¾Ý.....");
+		logInfo("ï¿½Ë¿ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½Îª8888ï¿½ï¿½ï¿½ï¿½Ê¼×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.....");
 		try {
 			int index = 1;
 			while(true) {
@@ -40,7 +40,7 @@ public class SocketServerMain {
 		if(!file.exists()) {
 			boolean success = file.mkdirs();
 			if(!success) 
-				throw new RuntimeException("ÎÞ·¨´´½¨Ä¿Â¼£º" + SERVER_SAVE_BASE_PATH);
+				throw new RuntimeException("ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½ï¿½" + SERVER_SAVE_BASE_PATH);
 		}
 	}
 }

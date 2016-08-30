@@ -1,4 +1,4 @@
-package chapter05.tools;
+package cn.com.mx.javatzb.chapter05.tools;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
@@ -9,7 +9,7 @@ public class CyclicBarrierTest {
 	private final static CyclicBarrier CYCLIC_BARRIER = new CyclicBarrier(
 			THREAD_COUNT, new Runnable() {
 				public void run() {
-					System.out.println("======>ÎÒÊÇµ¼ÓÎ£¬±¾´ÎµãÃû½áÊø£¬×¼±¸×ßÏÂÒ»¸ö»·½Ú!");
+					System.out.println("======>ï¿½ï¿½ï¿½Çµï¿½ï¿½Î£ï¿½ï¿½ï¿½ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!");
 				}
 			});
 
@@ -19,17 +19,17 @@ public class CyclicBarrierTest {
 			new Thread(String.valueOf(i)) {
 				public void run() {
 					try {
-						System.out.println("ÎÒÊÇÏß³Ì£º" + this.getName() + " ÎÒÃÇ´ïµ½ÂÃÓÎµØµã£¡");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + this.getName() + " ï¿½ï¿½ï¿½Ç´ïµ½ï¿½ï¿½ï¿½ÎµØµã£¡");
 						CYCLIC_BARRIER.await();
-						System.out.println("ÎÒÊÇÏß³Ì£º" + this.getName() + " ÎÒÃÇ¿ªÊ¼Æï³µ£¡");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + this.getName() + " ï¿½ï¿½ï¿½Ç¿ï¿½Ê¼ï¿½ï³µï¿½ï¿½");
 						CYCLIC_BARRIER.await();
-						System.out.println("ÎÒÊÇÏß³Ì£º" + this.getName() + " ÎÒÃÇ¿ªÊ¼ÅÀÉ½£¡");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + this.getName() + " ï¿½ï¿½ï¿½Ç¿ï¿½Ê¼ï¿½ï¿½É½ï¿½ï¿½");
 						CYCLIC_BARRIER.await();
-						System.out.println("ÎÒÊÇÏß³Ì£º" + this.getName() + " ÎÒÃÇ»Ø±ö¹ÝÐÝÏ¢£¡");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + this.getName() + " ï¿½ï¿½ï¿½Ç»Ø±ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½");
 						CYCLIC_BARRIER.await();
-						System.out.println("ÎÒÊÇÏß³Ì£º" + this.getName() + " ÎÒÃÇ¿ªÊ¼³Ë³µ»Ø¼Ò£¡");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + this.getName() + " ï¿½ï¿½ï¿½Ç¿ï¿½Ê¼ï¿½Ë³ï¿½ï¿½Ø¼Ò£ï¿½");
 						CYCLIC_BARRIER.await();
-						System.out.println("ÎÒÊÇÏß³Ì£º" + this.getName() + " ÎÒÃÇµ½¼ÒÁË£¡");
+						System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + this.getName() + " ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½Ë£ï¿½");
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} catch (BrokenBarrierException e) {

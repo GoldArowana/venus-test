@@ -1,4 +1,4 @@
-package chapter03.asm;
+package cn.com.mx.javatzb.chapter03.asm;
 
 import org.objectweb.asm.ClassAdapter;
 import org.objectweb.asm.ClassVisitor;

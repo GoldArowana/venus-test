@@ -1,4 +1,4 @@
-package chapter04.socket.server;
+package cn.com.mx.javatzb.chapter04.socket.server;
 
 import static chapter04.socket.Commons.DEFAULT_BUFFER_LENGTH;
 import static chapter04.socket.Commons.DEFAULT_MESSAGE_CHARSET;
@@ -33,8 +33,8 @@ public class Worker extends Thread {
 	public Worker(SocketWrapper socketWrapper , String name) {
 		this.socketWrapper = socketWrapper;
 		this.name = name;
-		logInfo("ÎÒÊÇÏß³Ì£º" + name + " , ¿ªÊ¼Æô¶¯½ÓÊÕ¿Í»§¶Ë´«À´Êý¾Ý......");
-		this.start();//Æô¶¯
+		logInfo("ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½" + name + " , ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¿Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½......");
+		this.start();//ï¿½ï¿½ï¿½ï¿½
 	}
 	
 	public void run() {
@@ -54,14 +54,14 @@ public class Worker extends Thread {
 			}catch(DownloadNotExistsFileException e) {
 				logInfo(e.getMessage());
 			}catch(EOFException e) {
-				logInfo("¿Í»§¶Ë¹Ø±Õsocket£¬Ïß³Ì :" + name + " ½áÊøÖ´ÐÐ.");
-				break;//¶Ô·½socketÒÑ¾­¶Ï¿ª
+				logInfo("ï¿½Í»ï¿½ï¿½Ë¹Ø±ï¿½socketï¿½ï¿½ï¿½ß³ï¿½ :" + name + " ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½.");
+				break;//ï¿½Ô·ï¿½socketï¿½Ñ¾ï¿½ï¿½Ï¿ï¿½
 			}catch(SocketException e) {
-				logInfo("SocketÒì³££º" + e.getMessage() + "£¬Ïß³Ì :" + name + " ½áÊøÖ´ÐÐ.");
-				break;//socketÒì³£
+				logInfo("Socketï¿½ì³£ï¿½ï¿½" + e.getMessage() + "ï¿½ï¿½ï¿½ß³ï¿½ :" + name + " ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½.");
+				break;//socketï¿½ì³£
 			}catch(Exception e) {
 				e.printStackTrace();
-				logInfo("Ïß³Ì :" + name + " ½áÊøÖ´ÐÐ.");
+				logInfo("ï¿½ß³ï¿½ :" + name + " ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½.");
 				break;
 			}
 		}
@@ -74,30 +74,30 @@ public class Worker extends Thread {
 	}
 	
 	/**
-	 * ´¦Àí¿Í»§¶Ë´«À´µÄÐÅÏ¢Á÷
+	 * ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
 	 * @throws IOException 
 	 */
 	private void processMessage() throws IOException {
 		int length = socketWrapper.readInt();
 		byte[]message = new byte[length];
 		socketWrapper.read(message);
-		logInfo("Ïß³Ì£º" + name  + " ½ÓÊÜµ½À´×Ô¿Í»§¶Ë´«À´messageÐÅÏ¢£º" + new String(message , DEFAULT_MESSAGE_CHARSET));
+		logInfo("ï¿½ß³Ì£ï¿½" + name  + " ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½Ô¿Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½messageï¿½ï¿½Ï¢ï¿½ï¿½" + new String(message , DEFAULT_MESSAGE_CHARSET));
 	}
 	
 	/**
-	 * ´¦Àí¿Í»§¶Ë´«À´µÄÆÕÍ¨ÎÄ¼þ
+	 * ï¿½ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ë´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½Ä¼ï¿½
 	 * @throws IOException
 	 */
 	private void processFile() throws IOException {
-		//»ñÈ¡×Ö·û¼¯
+		//ï¿½ï¿½È¡ï¿½Ö·ï¿½
 		String charset = Commons.getCharsetNameByCode(socketWrapper.readByte());
-		logInfo("Ïß³Ì£º" + name + "½ÓÊÜÀ´Ô´¿Í»§¶Ë·¢ËÍÎÄ¼þ£¬×Ö·û¼¯Îª£º" + charset);
+		logInfo("ï¿½ß³Ì£ï¿½" + name + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ö·ï¿½Îªï¿½ï¿½" + charset);
 		
 		uploadFileContent(charset);
 	}
 
 	/**
-	 * ÉÏ´«ÎÄ¼þ´¦ÀíÃ÷Ï¸
+	 * ï¿½Ï´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸
 	 * @param charset
 	 * @throws IOException
 	 * @throws UnsupportedEncodingException
@@ -107,24 +107,24 @@ public class Worker extends Thread {
 			UnsupportedEncodingException, FileNotFoundException {
 		FileOutputStream out = null;
 		try {
-			//»ñÈ¡ÎÄ¼þÃû³¤¶ÈÒÔ¼°ÎÄ¼þÃû
+			//ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
 			short length = socketWrapper.readShort();
 			byte[]bytes = new byte[length];
 			socketWrapper.readFull(bytes);
 			String fileName = new String(bytes , DEFAULT_MESSAGE_CHARSET);
-			logInfo("Ïß³Ì£º" + name + "½ÓÊÜÀ´Ô´¿Í»§¶Ë·¢ËÍÎÄ¼þ£¬À´Ô´ÎÄ¼þÃûÎª£º" + fileName);
+			logInfo("ï¿½ß³Ì£ï¿½" + name + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½Îªï¿½ï¿½" + fileName);
 			
 			String path = SERVER_SAVE_BASE_PATH + fileName;
 			File file = new File(path);
 			if(file.exists()) {
 				throw new SaveExistsFileException(path);
 			}
-			socketWrapper.write(1);//±íÊ¾ÎÄ¼þ¿ÉÒÔ´´½¨
+			socketWrapper.write(1);//ï¿½ï¿½Ê¾ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½
 			out = new FileOutputStream(file);
 			
-			//»ñÈ¡ÎÄ¼þÄÚÈÝ£¬Êä³öÇ°Ãæ²¿·ÖÄÚÈÝ
+			//ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½Ç°ï¿½æ²¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			long fileLength = socketWrapper.readLong();
-			logInfo("Ïß³Ì£º" + name + "½ÓÊÜÀ´Ô´¿Í»§¶Ë·¢ËÍÎÄ¼þ£¬ÎÄ¼þ³¤¶ÈÎª£º" + fileLength);
+			logInfo("ï¿½ß³Ì£ï¿½" + name + "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½" + fileLength);
 			bytes = new byte[DEFAULT_BUFFER_LENGTH];
 			int allLength = 0 , i = 0;
 			while(allLength < fileLength) {
@@ -138,13 +138,13 @@ public class Worker extends Thread {
 					print(".");
 				}
 			}
-			logInfo("\nÎÄ¼þ½ÓÊÕÍê±Ï²¢±£´æ£¬Ïò¿Í»§¶Ë·¢ËÍÈ·ÈÏÐÅÏ¢ , Êµ¼Ê½ÓÊÜÄÚÈÝ³¤¶ÈÎª£º" + fileLength);
+			logInfo("\nï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½æ£¬ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½ï¿½È·ï¿½ï¿½ï¿½ï¿½Ï¢ , Êµï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½Îªï¿½ï¿½" + fileLength);
 			socketWrapper.write(1);
 		}catch(SaveExistsFileException e) {
 			socketWrapper.write(-1);
 			throw e;
 		}catch(RuntimeException e) {
-			logInfo("\nÎÄ¼þ½ÓÊÕÊ§°Ü£¬Ïò¿Í»§¶Ë·¢ËÍ´íÎóÏûÏ¢¡£");
+			logInfo("\nï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½Í»ï¿½ï¿½Ë·ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½");
 			socketWrapper.write(-2);
 			throw e;
 		}finally {
@@ -153,7 +153,7 @@ public class Worker extends Thread {
 	}
 	
 	/**
-	 * ÏÂÔØÎÄ¼þ¹¦ÄÜ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @throws IOException
 	 * @throws UnsupportedEncodingException
 	 * @throws FileNotFoundException
@@ -164,7 +164,7 @@ public class Worker extends Thread {
 		byte []fileNameBytes = new byte[fileNameLength];
 		socketWrapper.read(fileNameBytes);
 		String fileName = new String(fileNameBytes , DEFAULT_MESSAGE_CHARSET);
-		logInfo("Ïß³Ì£º" + name + "½ÓÊÜ¿Í»§¶ËÏÂÔØÎÄ¼þ£¬ÏÂÔØÎÄ¼þÃûÎª£º" + fileName);
+		logInfo("ï¿½ß³Ì£ï¿½" + name + "ï¿½ï¿½ï¿½Ü¿Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Îªï¿½ï¿½" + fileName);
 		
 		String absolatePath = SERVER_SAVE_BASE_PATH + fileName;
 		File file = new File(absolatePath);
@@ -174,7 +174,7 @@ public class Worker extends Thread {
 			socketWrapper.write(-1);
 			throw new DownloadNotExistsFileException(absolatePath);
 		}
-		socketWrapper.write(file.length());//ÎÄ¼þ³¤¶È
-		socketWrapper.writeFile(absolatePath);//ÎÄ¼þ
+		socketWrapper.write(file.length());//ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+		socketWrapper.writeFile(absolatePath);//ï¿½Ä¼ï¿½
 	}
 }

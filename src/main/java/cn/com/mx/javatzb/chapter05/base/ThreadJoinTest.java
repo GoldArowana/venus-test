@@ -1,4 +1,4 @@
-package chapter05.base;
+package cn.com.mx.javatzb.chapter05.base;
 
 import java.util.Random;
 
