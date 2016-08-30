@@ -29,7 +29,7 @@ public class xioo {
 		//StringBuffer sb = new StringBuffer(baseurl);
 		sb.append("name=15313729295");
 		sb.append("&pwd=3040D5ACE3A9C2EE25C46F42FB9C");//CÕýÈ·   D´íÎó
-		sb.append("&mobile=18611405099");//13161097875  13811664749
+		sb.append("&mobile=15122090587");//13161097875  13811664749
 		sb.append("&content=" + URLEncoder.encode(content, "UTF-8"));
 		sb.append("&stime=");
 		sb.append("&sign=" + URLEncoder.encode(sign, "UTF-8"));
