@@ -1,4 +1,4 @@
-package chapter07.stack;
+package cn.com.mx.javatzb.chapter07.stack;
 
 import org.apache.commons.lang.exception.ExceptionUtils;
 
