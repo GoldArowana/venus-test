@@ -1,4 +1,4 @@
-package chapter03.asm;
+package cn.com.mx.javatzb.chapter03.asm;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -17,18 +17,18 @@ public class ASMTestMain {
 			throws ClassNotFoundException, IOException, InstantiationException, 
 			       IllegalAccessException, IllegalArgumentException, SecurityException, 
 			       InvocationTargetException, NoSuchMethodException {
-		//ÔÚ×Ö½ÚÂëÔöÇ¿Ç°¼ÇÂ¼Ò»¸öClass
+		//ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿Ç°ï¿½ï¿½Â¼Ò»ï¿½ï¿½Class
 		Class <?>beforeASMClass = TEST_CLASS_LOADER.loadClass("chapter03.asm.ForASMTestClass");
 		
-		//ÎÒÃÇÖØÐÂ×°ÔØÐÞ¸ÄºóµÄÀà
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½ï¿½Þ¸Äºï¿½ï¿½ï¿½ï¿½
 		TEST_CLASS_LOADER.defineClassByByteArray("chapter03.asm.ForASMTestClass", asmChangeClassCall());
 		Class <?>afterASMClass = TEST_CLASS_LOADER.loadClass("chapter03.asm.ForASMTestClass");
 		
-		//·Ö±ðÍ¨¹ýÐÂÀÏclass´´½¨¶ÔÏó
+		//ï¿½Ö±ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½classï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Object beforeObject = beforeASMClass.newInstance();
 		Object afterObject = afterASMClass.newInstance();
 		
-		//·Ö±íµ÷ÓÃËüÃÇµÄ´úÂë
+		//ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÇµÄ´ï¿½ï¿½ï¿½
 		beforeASMClass.getMethod("display1").invoke(beforeObject);
 		afterASMClass.getMethod("display1").invoke(afterObject);
 	}
@@ -39,7 +39,7 @@ public class ASMTestMain {
 		ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS);
 		ASMClassModifyAdpter modifyAdpter = new ASMClassModifyAdpter(classWriter);
 		classReader.accept(modifyAdpter, ClassReader.SKIP_DEBUG);
-		//ÕâÀïÊä³öµÄ×Ö½ÚÂë£¬¿ÉÒÔÓÃjavapÃüÁîÀ´²é¿´Å¶
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½javapï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½é¿´Å¶
         //byte []bytes = classWriter.toByteArray();
 		//new FileOutputStream("d:/ForASMTestClass.class").write(bytes);
         //return bytes;

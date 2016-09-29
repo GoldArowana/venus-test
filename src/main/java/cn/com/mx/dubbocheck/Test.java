@@ -1,4 +1,4 @@
-package cn.com.mx.webapi.servlet.demo;
+package cn.com.mx.dubbocheck;
 
 import java.io.BufferedReader;
 import java.io.File;

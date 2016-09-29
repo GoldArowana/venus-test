@@ -1,4 +1,4 @@
-package chapter03.tools;
+package cn.com.mx.javatzb.chapter03.tools;
 
 import java.io.IOException;
 
