@@ -1,4 +1,4 @@
-package chapter03.fullgc;
+package cn.com.mx.javatzb.chapter03.fullgc;
 
 import java.lang.reflect.Method;
 import java.net.URLClassLoader;

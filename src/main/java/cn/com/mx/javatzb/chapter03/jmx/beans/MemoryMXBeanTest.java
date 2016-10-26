@@ -1,4 +1,4 @@
-package chapter03.jmx.beans;
+package cn.com.mx.javatzb.chapter03.jmx.beans;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.MemoryMXBean;

@@ -1,4 +1,4 @@
-package chapter03.inst.sizeof;
+package cn.com.mx.javatzb.chapter03.inst.sizeof;
 
 import java.lang.instrument.Instrumentation;
 

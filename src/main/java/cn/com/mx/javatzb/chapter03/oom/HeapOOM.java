@@ -1,4 +1,4 @@
-package chapter03.oom;
+package cn.com.mx.javatzb.chapter03.oom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ public class HeapOOM {
 	public static void main(String []args) {
 		List<String>list = new ArrayList<String>();
 		while(true) {
-			list.add("ÄÚ´æÒç³öÑ½£¬ÄÚ´æÒç³öÑ½£¡");
+			list.add("ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½");
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package chapter03.inst.transformer;
+package cn.com.mx.javatzb.chapter03.inst.transformer;
 
 import java.lang.instrument.Instrumentation;
 import java.lang.instrument.UnmodifiableClassException;
@@ -7,11 +7,11 @@ public class InstForTransformer {
 	
     private static Instrumentation inst;
 	
-    /*±àÒëÎªagentºó£¬ÏµÍ³Æô¶¯Ö´ĞĞmain·½·¨Ç°»áµ÷ÓÃËü*/
+    /*ï¿½ï¿½ï¿½ï¿½Îªagentï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½mainï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
     public static void premain(String agentArgs, Instrumentation instP) {
        inst = instP;
        inst.addTransformer(new TestTransformer() , true);
-       //ÉèÖÃÎªtrueºó£¬¿ÉÒÔÔÚÔËĞĞÊ±½øĞĞretransformClasses·½·¨£¬·ñÔòµ÷ÓÃretransformClassesÎŞĞ§
+       //ï¿½ï¿½ï¿½ï¿½Îªtrueï¿½ó£¬¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½retransformClassesï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½retransformClassesï¿½ï¿½Ğ§
        //inst.addTransformer(new TestTransformer() , true);
     }
     

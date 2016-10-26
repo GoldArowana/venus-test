@@ -1,4 +1,4 @@
-package chapter03.jmx;
+package cn.com.mx.javatzb.chapter03.jmx;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;

@@ -1,4 +1,4 @@
-package chapter03.inst.transformer;
+package cn.com.mx.javatzb.chapter03.inst.transformer;
 
 import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.IllegalClassFormatException;
@@ -14,17 +14,17 @@ public class TestTransformer implements ClassFileTransformer {
 	public byte[] transform(ClassLoader loader, String className,
 			Class<?> classBeingRedefined, ProtectionDomain protectionDomain,
 			byte[] classfileBuffer) throws IllegalClassFormatException {
-		//Êä³ö×°ÔØµÄÀàÃû,Í¬Ñù¿´µ½ÁËÀàµÄ×°ÔØ
+		//ï¿½ï¿½ï¿½×°ï¿½Øµï¿½ï¿½ï¿½ï¿½ï¿½,Í¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½
 		System.out.println("load class:" + className);
-		//Ö»ÓÐÖ¸¶¨µÄÀà²Å×°ÔØ
+		//Ö»ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×°ï¿½ï¿½
 		if("chapter03/asm/ForASMTestClass".equals(className)) {
 			try {
 				CtClass ctClass = ClassPool.getDefault().get(className.replace('/', '.'));
 				CtMethod ctMethod = ctClass.getDeclaredMethod("display1");
 				ctMethod.insertBefore(
-						"name=\"ÎÒÊÇname£¡Õâ´ÎÓÃjavassistÁËÅ¶£¡\";" +
-						"value=\"ÎÒÊÇvalue£¡\";" +
-						"System.out.println(\"ÎÒÊÇ¼Ó½øÈ¥µÄÅ¶£¬¹þ¹þ£º\" + name);"
+						"name=\"ï¿½ï¿½ï¿½ï¿½nameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½javassistï¿½ï¿½Å¶ï¿½ï¿½\";" +
+						"value=\"ï¿½ï¿½ï¿½ï¿½valueï¿½ï¿½\";" +
+						"System.out.println(\"ï¿½ï¿½ï¿½Ç¼Ó½ï¿½È¥ï¿½ï¿½Å¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\" + name);"
 				);
 				ctMethod.insertAfter("System.out.println(value);");
 				return ctClass.toBytecode();

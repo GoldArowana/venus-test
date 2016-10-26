@@ -1,12 +1,12 @@
-package chapter03.fullgc;
+package cn.com.mx.javatzb.chapter03.fullgc;
 
 
 
 public class StringInternPermGenFullGC {
 
 	/**
-	 * ÇëÔÚÃüÁîĞĞÏÂÔËĞĞ£¬×¢ÒâÊÇÔÚJDK 1.6ÏÂÔËĞĞ£¬ÔÚJDK 1.7ÖĞÔËĞĞµÄ½á¹û½«ÍêÈ«²»Í¬
-	 * ÔËĞĞ·½Ê½Îªjava -XX:+PrintGCDetials -XX:PermSize10m -XX:MaxPermSize=10m chapter3.fullgc.StringInternPermGenFullGC
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½JDK 1.6ï¿½ï¿½ï¿½ï¿½ï¿½Ğ£ï¿½ï¿½ï¿½JDK 1.7ï¿½ï¿½ï¿½ï¿½ï¿½ĞµÄ½ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½Í¬
+	 * ï¿½ï¿½ï¿½Ğ·ï¿½Ê½Îªjava -XX:+PrintGCDetials -XX:PermSize10m -XX:MaxPermSize=10m chapter3.fullgc.StringInternPermGenFullGC
 	 * @param args
 	 */
 	public static void main(String []args) {

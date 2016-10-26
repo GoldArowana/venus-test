@@ -1,12 +1,12 @@
-package chapter03.tools.btrace;
+package cn.com.mx.javatzb.chapter03.tools.btrace;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 这是一段被BTrace跟踪的代码哦！
- * 而跟踪的代码，大家请到script目录下找到文件BTraceTest.java
- * 然后按照书中的介绍进行操作即可
+ * 锟斤拷锟斤拷一锟轿憋拷BTrace锟斤拷锟劫的达拷锟斤拷哦锟斤拷
+ * 锟斤拷锟斤拷俚拇锟斤拷耄拷锟斤拷锟诫到script目录锟斤拷锟揭碉拷锟侥硷拷BTraceTest.java
+ * 然锟斤拷锟斤拷锟斤拷锟叫的斤拷锟杰斤拷锟叫诧拷锟斤拷锟斤拷锟斤拷
  * @author Administrator
  *
  */

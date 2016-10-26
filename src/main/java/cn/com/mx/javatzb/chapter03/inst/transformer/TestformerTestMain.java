@@ -1,4 +1,4 @@
-package chapter03.inst.transformer;
+package cn.com.mx.javatzb.chapter03.inst.transformer;
 
 import java.lang.instrument.UnmodifiableClassException;
 

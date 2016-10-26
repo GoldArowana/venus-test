@@ -1,4 +1,4 @@
-package chapter03.inst.redefineclass;
+package cn.com.mx.javatzb.chapter03.inst.redefineclass;
 
 import java.io.IOException;
 
@@ -24,10 +24,10 @@ public class RedeineClassMain {
 			CannotCompileException, IOException {
 		CtClass ctClass = ClassPool.getDefault().get("chapter3.asm.ForASMTestClass");
 		CtMethod ctMethod = ctClass.getDeclaredMethod("display1");
-		ctMethod.insertBefore("{ System.out.println(\"Ç°Ãæ¼ÓÒ»ÌõÑ½£¡\"); }");
+		ctMethod.insertBefore("{ System.out.println(\"Ç°ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ñ½ï¿½ï¿½\"); }");
 		ctMethod.insertAfter(
-				"String a = \"¶¨Òå¸öString\";" +
-				"System.out.println(\"Êä³öÎÒ¶¨ÒåµÄString£¡\" + a);"
+				"String a = \"ï¿½ï¿½ï¿½ï¿½ï¿½String\";" +
+				"System.out.println(\"ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½ï¿½Stringï¿½ï¿½\" + a);"
 		);
 		byte[]bytes = ctClass.toBytecode();
 		return bytes;

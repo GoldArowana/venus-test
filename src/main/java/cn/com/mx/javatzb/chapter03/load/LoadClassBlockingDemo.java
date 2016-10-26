@@ -1,4 +1,4 @@
-package chapter03.load;	
+package cn.com.mx.javatzb.chapter03.load;	
 
 class Node {
 	

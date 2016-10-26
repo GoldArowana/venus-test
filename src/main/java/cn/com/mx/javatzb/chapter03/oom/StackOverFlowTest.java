@@ -1,4 +1,4 @@
-package chapter03.oom;
+package cn.com.mx.javatzb.chapter03.oom;
 
 public class StackOverFlowTest {
 

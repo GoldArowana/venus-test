@@ -1,4 +1,4 @@
-package chapter03.inst.redefineclass;
+package cn.com.mx.javatzb.chapter03.inst.redefineclass;
 
 import java.lang.instrument.ClassDefinition;
 import java.lang.instrument.Instrumentation;

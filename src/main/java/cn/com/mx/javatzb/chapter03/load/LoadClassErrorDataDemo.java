@@ -1,4 +1,4 @@
-package chapter03.load;
+package cn.com.mx.javatzb.chapter03.load;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class LoadClassErrorDataDemo {
 	
 	private final static LoadClassErrorDataDemo INIT_OBJECT = new LoadClassErrorDataDemo();
    	
-	//Ö±½Ó¸øLIST¸³ÖµÊÔÒ»ÊÔ¿´£¬½á¹ûÊÇÊ²Ã´£¿
+	//Ö±ï¿½Ó¸ï¿½LISTï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½Ô¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê²Ã´ï¿½ï¿½
 	//private static List<String> LIST = new ArrayList<String>();
 	private static List<String> LIST;
 	
@@ -35,8 +35,8 @@ public class LoadClassErrorDataDemo {
    	}
 
    	/**
-   	 * ÀíÂÛÉÏÎÒÃÇÏ£ÍûµÄArrayListµÄ¸³ÖµÊÇÀ´×ÔÓÚ¹¹Ôì·½·¨ÖÐ£¬Òò´ËÓ¦¸Ã°üº¬2¡¢3Á½¸öÖµ
-   	 * µ«ÊÇÊµ¼Ê½á¹ûÈ·Êµ1
+   	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½ArrayListï¿½Ä¸ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ì·½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ã°ï¿½2ï¿½ï¿½3ï¿½ï¿½ï¿½ï¿½Öµ
+   	 * ï¿½ï¿½ï¿½ï¿½Êµï¿½Ê½ï¿½ï¿½È·Êµ1
    	 * @param args
    	 */
     public static void main(String []args) {

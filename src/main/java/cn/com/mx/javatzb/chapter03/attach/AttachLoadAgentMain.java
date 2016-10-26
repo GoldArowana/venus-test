@@ -1,4 +1,4 @@
-package chapter03.attach;
+package cn.com.mx.javatzb.chapter03.attach;
 
 import java.io.IOException;
 import java.util.List;

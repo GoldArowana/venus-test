@@ -1,4 +1,4 @@
-package chapter03.jmx;
+package cn.com.mx.javatzb.chapter03.jmx;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import javax.management.remote.JMXServiceURL;
 public class MBeanServerRemoteTest {
 
 	/**
-	 * Ô¶³ÌµØÖ·ÐèÒª¿ªÆô£º
+	 * Ô¶ï¿½Ìµï¿½Ö·ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * -Dcom.sun.management.jmxremote 
 	 * -Dcom.sun.management.jmxremote.port=9000 
 	 * -Dcom.sun.management.jmxremote.authenticate=true
@@ -45,6 +45,6 @@ public class MBeanServerRemoteTest {
 		System.out.println(JMXUtils.getFullGC(mBeanServer));
 		System.out.println(mBeanServer.getAttribute(new ObjectName("JMImplementation:type=MBeanServerDelegate"), "ImplementationVersion"));
 		System.out.println(mBeanServer.getAttribute(new ObjectName("java.lang:type=Runtime"), "BootClassPath"));
-		//ÆäÓàµÄ¿ÉÒÔ×Ô¼º±éÀú³öÀ´
+		//ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 }

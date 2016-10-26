@@ -1,4 +1,4 @@
-package chapter03.oom;
+package cn.com.mx.javatzb.chapter03.oom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 public class StringInternPermGenOOM {
 
 	/**
-	 * ÇëÔÚÃüÁîĞĞÏÂÔËĞĞ
-	 * ÔËĞĞ·½Ê½£ºjava -XX:PermSize10m -XX:MaxPermSize=10m chapter3.fullgc.StringInternPermGenFullGC
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½ï¿½ï¿½Ğ·ï¿½Ê½ï¿½ï¿½java -XX:PermSize10m -XX:MaxPermSize=10m chapter3.fullgc.StringInternPermGenFullGC
 	 * 
 	 * @param args
 	 */

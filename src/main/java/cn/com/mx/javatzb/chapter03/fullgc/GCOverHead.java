@@ -1,10 +1,10 @@
-package chapter03.fullgc;
+package cn.com.mx.javatzb.chapter03.fullgc;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GCOverHead {
-	/*ÕâÀïÏÈÕ¼ÓÃµôOldÇø³¬¹ı14MµÄ¿Õ¼ä*/
+	/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¼ï¿½Ãµï¿½Oldï¿½ï¿½ï¿½14Mï¿½Ä¿Õ¼ï¿½*/
 	public final static byte[]DEFAULT_BYTES = new byte[12 * 1024 * 1024];
 	
 	public static void main(String []args) {	
