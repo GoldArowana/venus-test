@@ -33,6 +33,10 @@ public class FastJsonDemo {
 		ComplexMap2JsonM9();
 		complex2JsonM8();
 		complexEampleM7();
+		bean2JSONObjectM6();
+		json2JavaBeanM4();
+		json2JSONArrayM3();
+		bean2JsonM5();
 	}
 	
 	
@@ -41,6 +45,7 @@ public class FastJsonDemo {
 		String s1 = "{\"name\":\"liuzhao\"}";
 		//先序列化为json对象
 		JSONObject json = JSON.parseObject(s1);
+		System.err.println(json);
 		System.out.println(json.get("name"));
 	}
 	/**
@@ -50,6 +55,7 @@ public class FastJsonDemo {
 	private static void json2BeanM2(){
 		String s2 = "{\"id\":\"0375\",\"city\":\"平顶山\"}";
 		Weibo weibo = JSON.parseObject(s2, Weibo.class);
+		System.err.println(weibo.toString());
 		System.out.println(weibo.getId()+weibo.getCity());
 	}
 	
@@ -77,7 +83,7 @@ public class FastJsonDemo {
 		map.put(3, group.getList());
 		
 		String jsonString = JSON.toJSONString(map);
-		System.out.println(jsonString);
+		System.err.println(jsonString);
 	}
 	/**
 	 * 一个复杂的由Object到Json的Demo

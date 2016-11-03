@@ -12,7 +12,12 @@ public class Weibo {
     public Weibo() {  
     }  
   
-    public String getId() {  
+    @Override
+	public String toString() {
+		return "Weibo [id=" + id + ", city=" + city + "]";
+	}
+
+	public String getId() {  
         return id;  
     }  
   
