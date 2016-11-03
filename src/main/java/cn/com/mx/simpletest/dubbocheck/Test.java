@@ -1,4 +1,4 @@
-package cn.com.mx.simpletest.dubbocheck;
+/*package cn.com.mx.simpletest.dubbocheck;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,7 +24,7 @@ public class Test {
 		}
 		System.out.println("本地venus-social-1.9.1");
 		readFileByLines("C:\\Users\\yuanchangjun.MEIXIN\\Desktop\\1\\venus-social-dubbo-provider.xml");
-		/*document  =  Jsoup.connect("http://10.125.201.33:8181/venus-social").ignoreContentType(true).userAgent("Mozilla").get();
+		document  =  Jsoup.connect("http://10.125.201.33:8181/venus-social").ignoreContentType(true).userAgent("Mozilla").get();
 		Elements els = document.select("a");
 		for (Element element : els) {
 			if(element.absUrl("href").indexOf("venus-social-1.9.1.tar.gz")>=0){
@@ -32,7 +32,7 @@ public class Test {
 				//zip("C:\\Users\\yuanchangjun.MEIXIN\\Desktop\\1\\venus-social-1.9.1.tar.gz","C:\\Users\\yuanchangjun.MEIXIN\\Desktop\\1\\");
 				readFileByLines("C:\\Users\\yuanchangjun.MEIXIN\\Desktop\\1\\venus-social-dubbo-provider.xml");
 			}
-		}*/
+		}
 		
 	}
 	
@@ -74,4 +74,4 @@ public class Test {
 			System.out.println(interfaces +" - >" + version);
 		}
     }
-}
+}*/

@@ -39,14 +39,20 @@ public class GMTtime {
   
    public static void main(String argv[] ) throws Exception{
        
-        TimeZone timeZone = TimeZone.getDefault();
-        System.err.println(timeZone.toString());
+        TimeZone timeZone1 = TimeZone.getDefault();
+        GMTtime.testDayTime(timeZone1);
+        
+        System.out.println("----------------------------------------------------------------");
+        //TimeZone.setDefault(TimeZone.getTimeZone("GMT+08"));
+        TimeZone timeZone = TimeZone.getTimeZone("GMT+08");
+        //System.err.println(timeZone.toString());
         GMTtime.testDayTime(timeZone);
        
         System.out.println("----------------------------------------------------------------");
        
+        
         timeZone = TimeZone.getTimeZone("GMT");
-        System.err.println(timeZone.toString());
+       // System.err.println(timeZone.toString());
         GMTtime.testDayTime(timeZone);
    }
 
