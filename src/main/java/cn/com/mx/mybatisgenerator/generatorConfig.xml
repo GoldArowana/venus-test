@@ -3,34 +3,38 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
 <generatorConfiguration>  
-<!-- Êý¾Ý¿âÇý¶¯-->  
+<!-- ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½-->  
     <classPathEntry  location="mysql-connector-java-5.1.25-bin.jar"/>  
     <context id="DB2Tables"  targetRuntime="MyBatis3">  
         <commentGenerator>  
             <property name="suppressDate" value="true"/>  
-            <!-- ÊÇ·ñÈ¥³ý×Ô¶¯Éú³ÉµÄ×¢ÊÍ true£ºÊÇ £º false:·ñ -->  
+            <!-- ï¿½Ç·ï¿½È¥ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½Éµï¿½×¢ï¿½ï¿½ trueï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ false:ï¿½ï¿½ -->  
             <property name="suppressAllComments" value="true"/>  
         </commentGenerator>  
-        <!--Êý¾Ý¿âÁ´½ÓURL£¬ÓÃ»§Ãû¡¢ÃÜÂë -->  
+        <!--ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½URLï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->  
         <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.125.31.220/gomeo2o" userId="develop" password="ZQ2yGUJfE2">  
         </jdbcConnection>  
         <javaTypeResolver>  
             <property name="forceBigDecimals" value="false"/>  
         </javaTypeResolver>  
-        <!-- Éú³ÉÄ£ÐÍµÄ°üÃûºÍÎ»ÖÃ-->  
+        <!-- ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ÍµÄ°ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½-->  
         <javaModelGenerator targetPackage="test.domain" targetProject="src">  
             <property name="enableSubPackages" value="true"/>  
             <property name="trimStrings" value="true"/>  
         </javaModelGenerator>  
-        <!-- Éú³ÉÓ³ÉäÎÄ¼þµÄ°üÃûºÍÎ»ÖÃ-->  
+        <!-- ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ä°ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½-->  
         <sqlMapGenerator targetPackage="test.mapping" targetProject="src">  
             <property name="enableSubPackages" value="true"/>  
         </sqlMapGenerator>  
-        <!-- Éú³ÉDAOµÄ°üÃûºÍÎ»ÖÃ-->  
+        <!-- ï¿½ï¿½ï¿½ï¿½DAOï¿½Ä°ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½-->  
         <javaClientGenerator type="XMLMAPPER" targetPackage="test.IDao" targetProject="src">  
             <property name="enableSubPackages" value="true"/>  
-        </javaClientGenerator>  
-        <!-- ÒªÉú³ÉµÄ±í tableNameÊÇÊý¾Ý¿âÖÐµÄ±íÃû»òÊÓÍ¼Ãû domainObjectNameÊÇÊµÌåÀàÃû-->  
+        </javaClientGenerator>
+        <!--ç”Ÿæˆæ³¨è§£çš„ç±»ä¼¼sqlproviderçš„ä¸œè¥¿ï¼ŒåŸºäºŽåŠ¨æ€sqlçš„-->
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.shangde.tiku.question.dao" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!-- Òªï¿½ï¿½ï¿½ÉµÄ±ï¿½ tableNameï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ÐµÄ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ domainObjectNameï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-->  
         <table tableName="xpop_shop_brand_application_record" domainObjectName="XpopShopBrandApplicationRecord" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
     </context>  
 </generatorConfiguration>  
