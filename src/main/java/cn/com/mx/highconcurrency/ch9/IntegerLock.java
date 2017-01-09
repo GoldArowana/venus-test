@@ -1,4 +1,4 @@
-package geym.ch9;
+package cn.com.mx.highconcurrency.ch9;
 
 public class IntegerLock {
 	static Integer i=0;
