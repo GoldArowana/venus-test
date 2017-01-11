@@ -1,5 +1,5 @@
 
-package geym.ch8;
+package cn.com.mx.highconcurrency.ch8;
 
 import java.io.BufferedReader;
 import java.io.IOException;

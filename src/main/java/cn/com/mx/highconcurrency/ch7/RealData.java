@@ -1,4 +1,4 @@
-package geym.ch7;
+package cn.com.mx.highconcurrency.ch7;
 
 import java.util.concurrent.Callable;
 

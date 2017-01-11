@@ -1,5 +1,5 @@
 
-package geym.ch8;
+package cn.com.mx.highconcurrency.ch8;
 
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
@@ -53,7 +53,7 @@ public class MultiThreadNIOEchoServer {
             // We've enqueued data to be written to the client, we must
             // not set interest in OP_WRITE.
             sk.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-            //Ç¿ÆÈselectorÁ¢¼´·µ»Ø
+            //Ç¿ï¿½ï¿½selectorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             selector.wakeup();
         }
     }

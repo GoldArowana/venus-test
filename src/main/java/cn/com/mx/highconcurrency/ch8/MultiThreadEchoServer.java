@@ -1,4 +1,4 @@
-package geym.ch8;
+package cn.com.mx.highconcurrency.ch8;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,7 +24,7 @@ public class MultiThreadEchoServer {
 
         is = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 os = new PrintWriter(clientSocket.getOutputStream(), true);
-                // ´ÓInputStreamµ±ÖÐ¶ÁÈ¡¿Í»§¶ËËù·¢ËÍµÄÊý¾Ý  
+                // ï¿½ï¿½InputStreamï¿½ï¿½ï¿½Ð¶ï¿½È¡ï¿½Í»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½  
                 String inputLine = null;
                 long b=System.currentTimeMillis();
                 while ((inputLine = is.readLine()) != null) {

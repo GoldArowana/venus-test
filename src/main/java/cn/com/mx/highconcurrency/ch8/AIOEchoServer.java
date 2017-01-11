@@ -1,5 +1,5 @@
 
-package geym.ch8;
+package cn.com.mx.highconcurrency.ch8;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -21,7 +21,7 @@ public class AIOEchoServer {
 
     public void start() throws InterruptedException, ExecutionException, TimeoutException {
         System.out.println("Server listen on " + PORT);
-        //×¢²áÊÂ¼þºÍÊÂ¼þÍê³ÉºóµÄ´¦ÀíÆ÷
+        //×¢ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Éºï¿½Ä´ï¿½ï¿½ï¿½ï¿½ï¿½
         server.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {
             final ByteBuffer buffer = ByteBuffer.allocate(1024);
             public void completed(AsynchronousSocketChannel result, Object attachment) {
@@ -56,7 +56,7 @@ public class AIOEchoServer {
 
     public static void main(String args[]) throws Exception {
         new AIOEchoServer().start();
-        // Ö÷Ïß³Ì¿ÉÒÔ¼ÌÐø×Ô¼ºµÄÐÐÎª
+        // ï¿½ï¿½ï¿½ß³Ì¿ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½Îª
         while (true) {
             Thread.sleep(1000);
         }
