@@ -3,6 +3,7 @@ package cn.com.mx.java8.lambda;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by wangchangye on 2016/12/1.
@@ -15,7 +16,6 @@ public class UserlistTest {
 		list.add(new User(3,"谨慎3"));
 		list.stream().sorted(Comparator.comparing(User::getAge));
 		System.out.println(list);
-
 	}
 
 }

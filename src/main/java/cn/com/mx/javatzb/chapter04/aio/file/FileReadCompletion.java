@@ -1,3 +1,4 @@
+/*
 package cn.com.mx.javatzb.chapter04.aio.file;
 
 import java.io.IOException;
@@ -5,6 +6,8 @@ import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousFileChannel;
 import java.nio.channels.CompletionHandler;
 import java.nio.channels.FileChannel;
+
+import static cn.com.mx.javatzb.chapter04.socket.Commons.closeStreams;
 
 public class FileReadCompletion implements
 		CompletionHandler<Integer, FileChannel> {
@@ -33,7 +36,9 @@ public class FileReadCompletion implements
 				int writeLength = writeChannel.write(byteBuffer, nowPosition);
 				nowPosition += writeLength;
 			} catch (IOException e) {
-				/*���Լ����Լ��Ĵ���Ŷ*/
+				*/
+/*���Լ����Լ��Ĵ���Ŷ*//*
+
 			}
 			byteBuffer.clear();
 			readFileChannel.read(byteBuffer, nowPosition , writeChannel , this);
@@ -47,3 +52,4 @@ public class FileReadCompletion implements
 	}
 
 }
+*/

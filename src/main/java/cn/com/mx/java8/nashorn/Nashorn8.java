@@ -1,3 +1,4 @@
+/*
 package cn.com.mx.java8.nashorn;
 
 import com.winterbe.java8.samples.lambda.Person;
@@ -6,9 +7,11 @@ import jdk.nashorn.api.scripting.NashornScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
+*/
 /**
  * @author Benjamin Winterberg
- */
+ *//*
+
 public class Nashorn8 {
     public static void main(String[] args) throws ScriptException, NoSuchMethodException {
         NashornScriptEngine engine = (NashornScriptEngine) new ScriptEngineManager().getEngineByName("nashorn");
@@ -21,3 +24,4 @@ public class Nashorn8 {
     }
 
 }
+*/
