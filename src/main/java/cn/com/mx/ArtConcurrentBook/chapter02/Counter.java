@@ -2,17 +2,17 @@
  * Alipay.com Inc.
  * Copyright (c) 2004-2015 All Rights Reserved.
  */
-package cn.com.mx.ArtConcurrentBook.chapter02;
+package chapter02;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * ??????
- * 
+ * 计数器
+ *
  * @author tengfei.fangtf
- * @version $Id: Snippet.java, v 0.1 2015-7-31 ????11:32:42 tengfei.fangtf Exp $
+ * @version $Id: Snippet.java, v 0.1 2015-7-31 下午11:32:42 tengfei.fangtf Exp $
  */
 public class Counter {
 
@@ -39,7 +39,7 @@ public class Counter {
             t.start();
 
         }
-        // ????????????????
+        // 等待所有线程执行完成
         for (Thread t : ts) {
             try {
                 t.join();
@@ -54,7 +54,7 @@ public class Counter {
     }
 
     /**
-     * ???CAS??????????????
+     * 使用CAS实现线程安全计数器
      */
     private void safeCount() {
         for (;;) {
@@ -67,7 +67,7 @@ public class Counter {
     }
 
     /**
-     * ?????????????
+     * 非线程安全计数器
      */
     private void count() {
         i++;

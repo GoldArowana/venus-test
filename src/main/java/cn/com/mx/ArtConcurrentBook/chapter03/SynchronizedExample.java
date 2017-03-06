@@ -4,15 +4,15 @@ class SynchronizedExample {
     int     a    = 0;
     boolean flag = false;
 
-    public synchronized void writer() { //��ȡ��
+    public synchronized void writer() { //获取锁
         a = 1;
         flag = true;
-    } //�ͷ���
+    } //释放锁
 
-    public synchronized void reader() { //��ȡ��
+    public synchronized void reader() { //获取锁
         if (flag) {
             int i = a;
-            //����
-        } //�ͷ���
+            //……
+        } //释放锁
     }
 }

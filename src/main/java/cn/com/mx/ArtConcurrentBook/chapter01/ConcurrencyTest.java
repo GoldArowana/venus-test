@@ -1,20 +1,20 @@
-package cn.com.mx.ArtConcurrentBook.chapter01;
+package chapter01;
 
 /**
- * �����͵��߳�ִ�в���
- * 
+ * 并发和单线程执行测试
+ *
  * @author tengfei.fangtf
- * @version $Id: ConcurrencyTest.java, v 0.1 2014-7-18 ����10:03:31 tengfei.fangtf Exp $
+ * @version $Id: ConcurrencyTest.java, v 0.1 2014-7-18 下午10:03:31 tengfei.fangtf Exp $
  */
 public class ConcurrencyTest {
 
-    /** ִ�д��� */
+    /** 执行次数 */
     private static final long count = 10000l;
 
     public static void main(String[] args) throws InterruptedException {
-        //��������
+        //并发计算
         concurrency();
-        //���̼߳���
+        //单线程计算
         serial();
     }
 

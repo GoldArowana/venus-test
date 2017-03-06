@@ -1,19 +1,19 @@
 package cn.com.mx.ArtConcurrentBook.chapter03;
 
 class VolatileFeaturesExample1 {
-    long vl = 0L; // 64λ��long����ͨ����
+    long vl = 0L; // 64位的long型普通变量
 
-    public synchronized void set(long l) {//�Ե�������ͨ������д��ͬһ����ͬ��
+    public synchronized void set(long l) {//对单个的普通变量的写用同一个锁同步
         vl = l;
     }
 
-    public void getAndIncrement() { //��ͨ��������
-        long temp = get(); //������ͬ���Ķ�����
-        temp += 1L; //��ͨд����
-        set(temp); //������ͬ����д����
+    public void getAndIncrement() { //普通方法调用
+        long temp = get(); //调用已同步的读方法
+        temp += 1L; //普通写操作
+        set(temp); //调用已同步的写方法
     }
 
-    public synchronized long get() { //�Ե�������ͨ�����Ķ���ͬһ����ͬ��
+    public synchronized long get() { //对单个的普通变量的读用同一个锁同步
         return vl;
     }
 }
