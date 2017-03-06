@@ -15,23 +15,23 @@ public class ProcessData {
     public void processData() {
         readLock.lock();
         if (!update) {
-            // �������ͷŶ���
+            // 必须先释放读锁
             readLock.unlock();
-            // ����д���ȡ����ʼ
+            // 锁降级从写锁获取到开始
             writeLock.lock();
             try {
                 if (!update) {
-                    // ׼����ݵ����̣��ԣ�
+                    // 准备数据的流程（略）
                     update = true;
                 }
                 readLock.lock();
             } finally {
                 writeLock.unlock();
             }
-            // ����ɣ�д��Ϊ����
+            // 锁降级完成，写锁降级为读锁
         }
         try {
-            // ʹ����ݵ����̣��ԣ�
+            // 使用数据的流程（略）
         } finally {
             readLock.unlock();
         }

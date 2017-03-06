@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class BoundedQueue<T> {
     private Object[]  items;
-    // ��ӵ��±꣬ɾ����±�����鵱ǰ����
+    // 添加的下标，删除的下标和数组当前数量
     private int       addIndex, removeIndex, count;
     private Lock      lock     = new ReentrantLock();
     private Condition notEmpty = lock.newCondition();
@@ -22,7 +22,7 @@ public class BoundedQueue<T> {
         items = new Object[size];
     }
 
-    // ���һ��Ԫ�أ����������������߳̽���ȴ�״̬��ֱ���С���λ��
+    // 添加一个元素，如果数组满，则添加线程进入等待状态，直到有“空位”
     public void add(T t) throws InterruptedException {
         lock.lock();
         try {
@@ -38,7 +38,7 @@ public class BoundedQueue<T> {
         }
     }
 
-    // ��ͷ��ɾ��һ��Ԫ�أ��������գ���ɾ���߳̽���ȴ�״̬��ֱ���������Ԫ��
+    // 由头部删除一个元素，如果数组空，则删除线程进入等待状态，直到有新添加元素
     @SuppressWarnings("unchecked")
     public T remove() throws InterruptedException {
         lock.lock();

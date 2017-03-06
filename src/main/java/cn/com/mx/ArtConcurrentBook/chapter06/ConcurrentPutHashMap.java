@@ -8,10 +8,10 @@ import java.util.HashMap;
 import java.util.UUID;
 
 /**
- * ����put
- * 
+ * 并发put
+ *
  * @author tengfei.fangtf
- * @version $Id: Snippet.java, v 0.1 2015-7-31 ����11:53:55 tengfei.fangtf Exp $
+ * @version $Id: Snippet.java, v 0.1 2015-7-31 下午11:53:55 tengfei.fangtf Exp $
  */
 public class ConcurrentPutHashMap {
 
