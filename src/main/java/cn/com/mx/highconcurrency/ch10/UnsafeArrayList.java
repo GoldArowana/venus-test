@@ -1,9 +1,9 @@
-package geym.ch10;
+package cn.com.mx.highconcurrency.ch10;
 
 import java.util.ArrayList;
 
 /**
- * 两个线程都过了数组大小检查，先后插入数据时 引起 out of bound
+ * 锟斤拷锟斤拷锟竭程讹拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫★拷锟介，锟饺猴拷锟斤拷锟斤拷锟斤拷时 锟斤拷锟斤拷 out of bound
  * @author Geym
  *
  */

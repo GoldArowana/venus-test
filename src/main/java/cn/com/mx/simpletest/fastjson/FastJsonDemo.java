@@ -1,16 +1,15 @@
 package cn.com.mx.simpletest.fastjson;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import cn.com.mx.simpletest.model.Group;
+import cn.com.mx.simpletest.model.User;
+import cn.com.mx.simpletest.model.Weibo;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
-import cn.com.mx.simpletest.model.Group;
-import cn.com.mx.simpletest.model.User;
-import cn.com.mx.simpletest.model.Weibo;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 下面是FastJson的简介：常用的方法！  

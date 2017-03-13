@@ -1,4 +1,4 @@
-package chapter01;
+package cn.com.mx.ArtConcurrentBook.chapter01;
 
 /**
  * 并发和单线程执行测试

@@ -1,4 +1,4 @@
-package geym.ch10;
+package cn.com.mx.highconcurrency.ch10;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -7,11 +7,11 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.LongAdder;
 
 public class LongAdderDemo {
-	private static final int MAX_THREADS = 3;				   //Ïß³ÌÊý
-	private static final int TASK_COUNT = 3;				   //ÈÎÎñÊý
-	private static final int TARGET_COUNT = 10000000;		   //Ä¿±ê×ÜÊý
+	private static final int MAX_THREADS = 3;				   //ï¿½ß³ï¿½ï¿½ï¿½
+	private static final int TASK_COUNT = 3;				   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	private static final int TARGET_COUNT = 10000000;		   //Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	
-	private AtomicLong acount =new AtomicLong(0L);			//ÎÞËøµÄÔ­×Ó²Ù×÷
+	private AtomicLong acount =new AtomicLong(0L);			//ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½Ó²ï¿½ï¿½ï¿½
 	private LongAdder lacount=new LongAdder();
 	private long count=0;
 	
@@ -19,11 +19,11 @@ public class LongAdderDemo {
 	static CountDownLatch cdlatomic=new CountDownLatch(TASK_COUNT);
 	static CountDownLatch cdladdr=new CountDownLatch(TASK_COUNT);
 	
-	protected synchronized long inc(){							//ÓÐËøµÄ¼Ó·¨
+	protected synchronized long inc(){							//ï¿½ï¿½ï¿½ï¿½Ä¼Ó·ï¿½
 		return ++count;
 	}
 	
-	protected synchronized long getCount(){						//ÓÐËøµÄ²Ù×÷
+	protected synchronized long getCount(){						//ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 		return count;
 	}
 	
@@ -38,7 +38,7 @@ public class LongAdderDemo {
 		@Override
 		public void run() {
 			long v=out.getCount();
-			while(v<TARGET_COUNT){						//ÔÚµ½´ïÄ¿±êÖµÇ°£¬²»Í£Ñ­»·
+			while(v<TARGET_COUNT){						//ï¿½Úµï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ÖµÇ°ï¿½ï¿½ï¿½ï¿½Í£Ñ­ï¿½ï¿½
 				v=out.inc();
 			}
 			long endtime=System.currentTimeMillis();
@@ -52,7 +52,7 @@ public class LongAdderDemo {
 		long starttime=System.currentTimeMillis();
 		SyncThread sync=new SyncThread(this,starttime);
 		for(int i=0;i<TASK_COUNT;i++){
-			exe.submit(sync); 								//Ìá½»Ïß³Ì¿ªÊ¼¼ÆËã
+			exe.submit(sync); 								//ï¿½á½»ï¿½ß³Ì¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
 		}
 		cdlsync.await();
 		exe.shutdown();
@@ -64,10 +64,10 @@ public class LongAdderDemo {
 			this.starttime=starttime;
 		}
 		@Override
-		public void run() {									//ÔÚµ½´ïÄ¿±êÖµÇ°£¬²»Í£Ñ­»·
+		public void run() {									//ï¿½Úµï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ÖµÇ°ï¿½ï¿½ï¿½ï¿½Í£Ñ­ï¿½ï¿½
 			long v=acount.get();
 			while(v<TARGET_COUNT){
-				v=acount.incrementAndGet();					//ÎÞËøµÄ¼Ó·¨
+				v=acount.incrementAndGet();					//ï¿½ï¿½ï¿½ï¿½Ä¼Ó·ï¿½
 			}
 			long endtime=System.currentTimeMillis();
 			System.out.println("AtomicThread spend:"+(endtime-starttime)+"ms"+" v="+v);
@@ -80,7 +80,7 @@ public class LongAdderDemo {
 		long starttime=System.currentTimeMillis();
 		AtomicThread atomic=new AtomicThread(starttime);
 		for(int i=0;i<TASK_COUNT;i++){
-			exe.submit(atomic);								//Ìá½»Ïß³Ì¿ªÊ¼¼ÆËã
+			exe.submit(atomic);								//ï¿½á½»ï¿½ß³Ì¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
 		}
 		cdlatomic.await();
 		exe.shutdown();
@@ -110,7 +110,7 @@ public class LongAdderDemo {
 		long starttime=System.currentTimeMillis();
 		LongAddrThread atomic=new LongAddrThread(starttime);
 		for(int i=0;i<TASK_COUNT;i++){
-			exe.submit(atomic);								//Ìá½»Ïß³Ì¿ªÊ¼¼ÆËã
+			exe.submit(atomic);								//ï¿½á½»ï¿½ß³Ì¿ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½
 		}
 		cdladdr.await();
 		exe.shutdown();

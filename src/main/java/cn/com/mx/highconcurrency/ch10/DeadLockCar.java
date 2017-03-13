@@ -1,4 +1,4 @@
-package geym.ch10;
+package cn.com.mx.highconcurrency.ch10;
 
 import java.util.concurrent.locks.ReentrantLock;
 

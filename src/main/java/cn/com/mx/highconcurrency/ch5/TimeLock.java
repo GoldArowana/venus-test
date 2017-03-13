@@ -1,4 +1,4 @@
-package geym.ch5;
+package cn.com.mx.highconcurrency.ch5;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
