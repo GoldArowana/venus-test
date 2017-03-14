@@ -24,6 +24,6 @@ public class ThreadPoolDemo {
 			es.submit(task);
 			//es.execute(task);
 		}
-		es.shutdown();
+		es.shutdown(); //add shutdown method. or this will not end.
 	}
 }
