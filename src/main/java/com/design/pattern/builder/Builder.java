@@ -7,9 +7,12 @@ public class Builder {
 	
 	private List<Sender> list = new ArrayList<Sender>();
 	
-	public void produceMailSender(int count){
-		for(int i=0; i<count; i++){
+	public void produceMailSender(int count) {
+		for (int i = 0; i < count; i++) {
 			list.add(new MailSender());
+		}
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i);
 		}
 	}
 	
