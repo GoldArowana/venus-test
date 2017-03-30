@@ -1,16 +1,12 @@
 /**
- * 
+ *
  */
 package cn.com.mx.ArtConcurrentBook.chapter04;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import cn.com.mx.ArtConcurrentBook.chapter04.DefaultThreadPool;
+import cn.com.mx.ArtConcurrentBook.chapter04.ThreadPool;
+
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -18,12 +14,12 @@ import java.net.Socket;
  * 6-21
  */
 public class SimpleHttpServer {
-    // ����HttpRequest���̳߳�
+    // 处理HttpRequest的线程池
     static ThreadPool<HttpRequestHandler> threadPool = new DefaultThreadPool<HttpRequestHandler>(11);
-    // SimpleHttpServer�ĸ�·��
+    // SimpleHttpServer的根路径
     static String                         basePath;
     static ServerSocket                   serverSocket;
-    // �������˿�
+    // 服务监听端口
     static int                            port       = 8080;
 
     public static void setPort(int port) {
@@ -38,12 +34,12 @@ public class SimpleHttpServer {
         }
     }
 
-    // ����SimpleHttpServer
+    // 启动SimpleHttpServer
     public static void start() throws Exception {
         serverSocket = new ServerSocket(port);
         Socket socket = null;
         while ((socket = serverSocket.accept()) != null) {
-            // ����һ���ͻ���Socket�����һ��HttpRequestHandler�������̳߳�ִ��
+            // 接收一个客户端Socket，生成一个HttpRequestHandler，放入线程池执行
             threadPool.execute(new HttpRequestHandler(socket));
         }
         serverSocket.close();
@@ -67,10 +63,10 @@ public class SimpleHttpServer {
             try {
                 reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 String header = reader.readLine();
-                // �����·����������·��
+                // 由相对路径计算出绝对路径
                 String filePath = basePath + header.split(" ")[1];
                 out = new PrintWriter(socket.getOutputStream());
-                // ���������Դ�ĺ�׺Ϊjpg����ico�����ȡ��Դ�����
+                // 如果请求资源的后缀为jpg或者ico，则读取资源并输出
                 if (filePath.endsWith("jpg") || filePath.endsWith("ico")) {
                     in = new FileInputStream(filePath);
                     ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -106,14 +102,14 @@ public class SimpleHttpServer {
         }
     }
 
-    // �ر�������Socket
+    // 关闭流或者Socket
     private static void close(Closeable... closeables) {
         if (closeables != null) {
             for (Closeable closeable : closeables) {
                 try {
                     closeable.close();
                 } catch (Exception ex) {
-                    // ����
+                    // 忽略
                 }
             }
         }

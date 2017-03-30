@@ -5,11 +5,11 @@ package cn.com.mx.ArtConcurrentBook.chapter04;
  */
 public class Synchronized {
     public static void main(String[] args) {
-        // ��Synchronized Class������м���
+        // 对Synchronized Class对象进行加锁
         synchronized (Synchronized.class) {
 
         }
-        // ��̬ͬ����������Synchronized Class������м���
+        // 静态同步方法，对Synchronized Class对象进行加锁
         m();
     }
 

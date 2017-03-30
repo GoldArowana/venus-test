@@ -12,7 +12,7 @@ public class Piped {
     public static void main(String[] args) throws Exception {
         PipedWriter out = new PipedWriter();
         PipedReader in = new PipedReader();
-        // ����������������������ӣ�������ʹ��ʱ���׳�IOException
+        // 将输出流和输入流进行连接，否则在使用时会抛出IOException
         out.connect(in);
 
         Thread printThread = new Thread(new Print(in), "PrintThread");

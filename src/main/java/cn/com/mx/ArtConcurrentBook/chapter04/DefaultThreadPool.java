@@ -1,5 +1,7 @@
 package cn.com.mx.ArtConcurrentBook.chapter04;
 
+import cn.com.mx.ArtConcurrentBook.chapter04.ThreadPool;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -10,19 +12,19 @@ import java.util.concurrent.atomic.AtomicLong;
  * 6-20
  */
 public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> {
-    // �̳߳����������
+    // 线程池最大限制数
     private static final int      MAX_WORKER_NUMBERS     = 10;
-    // �̳߳�Ĭ�ϵ�����
+    // 线程池默认的数量
     private static final int      DEFAULT_WORKER_NUMBERS = 5;
-    // �̳߳���С������
+    // 线程池最小的数量
     private static final int      MIN_WORKER_NUMBERS     = 1;
-    // ����һ�������б?������������빤��
+    // 这是一个工作列表，将会向里面插入工作
     private final LinkedList<Job> jobs                   = new LinkedList<Job>();
-    // �������б�
+    // 工作者列表
     private final List<Worker>    workers                = Collections.synchronizedList(new ArrayList<Worker>());
-    // �������̵߳�����
+    // 工作者线程的数量
     private int                   workerNum              = DEFAULT_WORKER_NUMBERS;
-    // �̱߳�����
+    // 线程编号生成
     private AtomicLong            threadNum              = new AtomicLong();
 
     public DefaultThreadPool() {
@@ -36,7 +38,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 
     public void execute(Job job) {
         if (job != null) {
-            // ���һ��������Ȼ�����֪ͨ
+            // 添加一个工作，然后进行通知
             synchronized (jobs) {
                 jobs.addLast(job);
                 jobs.notify();
@@ -52,7 +54,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
 
     public void addWorkers(int num) {
         synchronized (jobs) {
-            // ����������Worker�������ܳ������ֵ
+            // 限制新增的Worker数量不能超过最大值
             if (num + this.workerNum > MAX_WORKER_NUMBERS) {
                 num = MAX_WORKER_NUMBERS - this.workerNum;
             }
@@ -66,7 +68,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
             if (num >= this.workerNum) {
                 throw new IllegalArgumentException("beyond workNum");
             }
-            // ���ո������ֹͣWorker
+            // 按照给定的数量停止Worker
             int count = 0;
             while (count < num) {
                 workers.get(count).shutdown();
@@ -80,7 +82,7 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
         return jobs.size();
     }
 
-    // ��ʼ���̹߳�����
+    // 初始化线程工作者
     private void initializeWokers(int num) {
         for (int i = 0; i < num; i++) {
             Worker worker = new Worker();
@@ -90,33 +92,33 @@ public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> 
         }
     }
 
-    // �����ߣ������������
+    // 工作者，负责消费任务
     class Worker implements Runnable {
-        // �Ƿ���
+        // 是否工作
         private volatile boolean running = true;
 
         public void run() {
             while (running) {
                 Job job = null;
                 synchronized (jobs) {
-                    // ��������б��ǿյģ���ô��wait
+                    // 如果工作者列表是空的，那么就wait
                     while (jobs.isEmpty()) {
                         try {
                             jobs.wait();
                         } catch (InterruptedException ex) {
-                            // ��֪���ⲿ��WorkerThread���жϲ���������
+                            // 感知到外部对WorkerThread的中断操作，返回
                             Thread.currentThread().interrupt();
                             return;
                         }
                     }
-                    // ȡ��һ��Job
+                    // 取出一个Job
                     job = jobs.removeFirst();
                 }
                 if (job != null) {
                     try {
                         job.run();
                     } catch (Exception ex) {
-                        // ����Jobִ���е�Exception
+                        // 忽略Job执行中的Exception
                     }
                 }
             }

@@ -1,5 +1,7 @@
 package cn.com.mx.ArtConcurrentBook.chapter04;
 
+import cn.com.mx.ArtConcurrentBook.chapter04.SleepUtils;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,15 +18,15 @@ public class Deprecated {
         printThread.setDaemon(true);
         printThread.start();
         TimeUnit.SECONDS.sleep(3);
-        // ��PrintThread������ͣ��������ݹ���ֹͣ
+        // 将PrintThread进行暂停，输出内容工作停止
         printThread.suspend();
         System.out.println("main suspend PrintThread at " + format.format(new Date()));
         TimeUnit.SECONDS.sleep(20);
-        // ��PrintThread���лָ���������ݼ���
+        // 将PrintThread进行恢复，输出内容继续
         printThread.resume();
         System.out.println("main resume PrintThread at " + format.format(new Date()));
         TimeUnit.SECONDS.sleep(3);
-        // ��PrintThread������ֹ���������ֹͣ
+        // 将PrintThread进行终止，输出内容停止
         printThread.stop();
         System.out.println("main stop PrintThread at " + format.format(new Date()));
         TimeUnit.SECONDS.sleep(3);

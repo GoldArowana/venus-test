@@ -10,13 +10,13 @@ public class Shutdown {
         Runner one = new Runner();
         Thread countThread = new Thread(one, "CountThread");
         countThread.start();
-        // ˯��1�룬main�̶߳�CountThread�����жϣ�ʹCountThread�ܹ���֪�ж϶����
+        // 睡眠1秒，main线程对CountThread进行中断，使CountThread能够感知中断而结束
         TimeUnit.SECONDS.sleep(1);
         countThread.interrupt();
         Runner two = new Runner();
         countThread = new Thread(two, "CountThread");
         countThread.start();
-        // ˯��1�룬main�̶߳�Runner two����ȡ��ʹCountThread�ܹ���֪onΪfalse�����
+        // 睡眠1秒，main线程对Runner two进行取消，使CountThread能够感知on为false而结束
         TimeUnit.SECONDS.sleep(1);
         two.cancel();
     }
