@@ -1,16 +1,16 @@
 package cn.com.mx.ArtConcurrentBook.chapter01;
 
 /**
- * ????????
- * 
+ * ËÀËøÀı×Ó
+ *
  * @author tengfei.fangtf
- * @version $Id: DeadLockDemo.java, v 0.1 2015-7-18 ????10:08:28 tengfei.fangtf Exp $
+ * @version $Id: DeadLockDemo.java, v 0.1 2015-7-18 ÏÂÎç10:08:28 tengfei.fangtf Exp $
  */
 public class DeadLockDemo {
 
-    /** A?? */
+    /** AËø */
     private static String A = "A";
-    /** B?? */
+    /** BËø */
     private static String B = "B";
 
     public static void main(String[] args) {
