@@ -7,9 +7,9 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 /*
-¹¦ÄÜ:		web.cr6868.com HTTP½Ó¿Ú ·¢ËÍ¶ÌÐÅ
+ï¿½ï¿½ï¿½ï¿½:		web.cr6868.com HTTPï¿½Ó¿ï¿½ ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½
 
-ËµÃ÷:		http://web.cr6868.com/asmx/smsservice.aspx?name=µÇÂ¼Ãû&pwd=½Ó¿ÚÃÜÂë&mobile=ÊÖ»úºÅÂë&content=ÄÚÈÝ&sign=Ç©Ãû&stime=·¢ËÍÊ±¼ä&type=pt&extno=×Ô¶¨ÒåÀ©Õ¹Âë
+Ëµï¿½ï¿½:		http://web.cr6868.com/asmx/smsservice.aspx?name=ï¿½ï¿½Â¼ï¿½ï¿½&pwd=ï¿½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½&mobile=ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½&content=ï¿½ï¿½ï¿½ï¿½&sign=Ç©ï¿½ï¿½&stime=ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½&type=pt&extno=ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½
 */
 public class xioo {
 
@@ -18,38 +18,38 @@ public class xioo {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		//·¢ËÍÄÚÈÝ
-		// ´´½¨StringBuffer¶ÔÏóÓÃÀ´²Ù×÷×Ö·û´®
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½StringBufferï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 		StringBuffer sb = new StringBuffer("http://web.cr6868.com/asmx/smsservice.aspx?");
-		//String content = "Ç×°®µÄ»áÔ±£¬ÄúÕýÔÚ°ó¶¨Éç½»ÕËºÅ£¬ÑéÖ¤ÂëÎª1234567,10·ÖÖÓÄÚÓÐÐ§£¡";
-		//String content = "¸ÐÐ»¼ÓÈë¹úÃÀ£«¡£ÔÚÎÒÃÇÕÐÉÌÈËÔ±ÁªÏµÄúÖ®Ç°Äú»¹¿ÉÒÔÍ¨¹ýµÇÂ¼ÉÌ¼Ò¹ÜÀíºóÌ¨http://xpop.gomeplus.com/login ½øÐÐ×ÔÖú²Ù×÷¡£×£ÄúÔÚ¹úÃÀ£«Æ½Ì¨¿ªµêË³Àû£¬ÉúÒâÐËÂ¡¡£»ØTÍË¶©¡£";
-		String content = "Ç×°®µÄ»áÔ±£¬ÄúÕýÔÚ¿ìËÙ×¢²á¹úÃÀ+ÕËºÅ²¢°ó¶¨Éç½»ÕËºÅ£¬ÑéÖ¤ÂëÎª123456,10·ÖÖÓÄÚÓÐÐ§£¡";
-		String sign = "¹úÃÀ+";
+		//String content = "ï¿½×°ï¿½ï¿½Ä»ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ï¿½ç½»ï¿½ËºÅ£ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½Îª1234567,10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½";
+		//String content = "ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Ïµï¿½ï¿½Ö®Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Â¼ï¿½Ì¼Ò¹ï¿½ï¿½ï¿½ï¿½Ì¨http://xpop.gomeplus.com/login ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×£ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¡ï¿½ï¿½ï¿½ï¿½Tï¿½Ë¶ï¿½ï¿½ï¿½";
+		String content = "ï¿½×°ï¿½ï¿½Ä»ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ËºÅ²ï¿½ï¿½ï¿½ï¿½ç½»ï¿½ËºÅ£ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½Îª123456,10ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½";
+		String sign = "ï¿½ï¿½ï¿½ï¿½+";
 		//String baseurl = configCenter.get("sms.url");
 		//StringBuffer sb = new StringBuffer(baseurl);
 		sb.append("name=15313729295");
-		sb.append("&pwd=3040D5ACE3A9C2EE25C46F42FB9C");//CÕýÈ·   D´íÎó
+		sb.append("&pwd=3040D5ACE3A9C2EE25C46F42FB9C");//Cï¿½ï¿½È·   Dï¿½ï¿½ï¿½ï¿½
 		sb.append("&mobile=15122090587");//13161097875  13811664749
 		sb.append("&content=" + URLEncoder.encode(content, "UTF-8"));
 		sb.append("&stime=");
 		sb.append("&sign=" + URLEncoder.encode(sign, "UTF-8"));
 		sb.append("&type=pt&extno=");
-		//log.info("ÇëÇóµÄurlÎª" + new String(sb.toString().getBytes("GBK"),"UTF-8"));
+		//log.info("ï¿½ï¿½ï¿½ï¿½ï¿½urlÎª" + new String(sb.toString().getBytes("GBK"),"UTF-8"));
 		URL url = new URL(sb.toString());
 		HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 		connection.setRequestMethod("POST");
 		InputStream is = url.openStream();
 		String returnStr = convertStreamToString(is);
 		System.out.println(returnStr);
-		//log.info("´´Èð¶ÌÐÅµÄ·µ»ØÖµÎª" + returnStr);
+		//log.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅµÄ·ï¿½ï¿½ï¿½ÖµÎª" + returnStr);
 		if(!returnStr.startsWith("0")){
-			//Æô¶¯±¸ÓÃ¶ÌÐÅ
-			String newsign = "¡¾¹úÃÀ+¡¿";
-			//log.info("Æô¶¯±¸ÓÃÍø¹Ø£¡");
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½
+			String newsign = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½+ï¿½ï¿½";
+			//log.info("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø£ï¿½");
 			String qixinUrl = "http://221.179.180.158:9007/QxtSms/QxtFirewall?";
 			StringBuffer sb2 = new StringBuffer(qixinUrl);
-			sb2.append("OperID=meixin")//¹ú¶¼ÕËºÅ
-			  .append("&OperPass=meixin")//¹ú¶¼ÃÜÂë
+			sb2.append("OperID=meixin")//ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½
+			  .append("&OperPass=meixin")//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			  .append("&DesMobile=18911261622")
 			  .append("&Content=" + URLEncoder.encode(newsign + content, "GBK"))
 			  .append("&ContentType=15")
@@ -74,11 +74,11 @@ public class xioo {
 
 	/**
 	 * 
-	 * @Description ×ª»»·µ»ØÖµÀàÐÍÎªUTF-8¸ñÊ½
+	 * @Description ×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ÎªUTF-8ï¿½ï¿½Ê½
 	 * @author wangchangye
-	 * @date 2016Äê2ÔÂ16ÈÕ ÏÂÎç4:55:19
+	 * @date 2016ï¿½ï¿½2ï¿½ï¿½16ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½4:55:19
 	 * @param is
-	 * @return
+	 * @return8888888h88888888888888888888888888888888888888888888888888888888888888
 	 */
 	public static  String convertStreamToString(InputStream is) {
 		StringBuilder sb1 = new StringBuilder();

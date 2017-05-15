@@ -1,3 +1,4 @@
+/*
 package cn.com.mx.algorithm.lettcode;
 
 import com.freetymekiyan.algorithms.utils.Utils.ListNode;
@@ -5,16 +6,19 @@ import com.freetymekiyan.algorithms.utils.Utils.ListNode;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+*/
 /**
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
  * <p>
  * Company Tags: LinkedIn, Google, Uber, Airbnb, Facebook, Twitter, Amazon, Microsoft
  * Tags: Divide and Conquer, Linked List, Heap
  * Similar Problems: (E) Merge Two Sorted Lists, (M) Ugly Number II
- */
+ *//*
+
 public class MergeKSortedList {
 
-    /**
+    */
+/**
      * Heap. O(k) + O(n * log(k)) Time, O(k) Space.
      * Keep track of all heads in a min heap, so that we know the next value to be inserted in O(log(k)) time.
      * Create a min heap of ListNode.
@@ -26,7 +30,8 @@ public class MergeKSortedList {
      * | Now c.next is the new head of that list.
      * | If c.next is not null, add it to heap.
      * Return dummy.next, which is the merged head.
-     */
+     *//*
+
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) {
             return null;
@@ -49,7 +54,8 @@ public class MergeKSortedList {
         return dummy.next;
     }
 
-    /**
+    */
+/**
      * Divide and conquer. O(nlogn) Time.
      * Merge k sorted lists can be divided, suppose we have k lists,
      * 1) Merge the first k / 2 lists
@@ -59,7 +65,8 @@ public class MergeKSortedList {
      * 1) If start > end, return null;
      * 2) If start == end, there is only 1 list, return the head of that list;
      * 3) If start == end - 1, there are 2 lists, return the merged list.
-     */
+     *//*
+
     public ListNode mergeKListsB(ListNode[] lists) {
         return mergeKListsB(lists, 0, lists.length - 1);
     }
@@ -80,7 +87,8 @@ public class MergeKSortedList {
                              mergeKListsB(lists, s + (e - s) / 2 + 1, e));
     }
 
-    /**
+    */
+/**
      * Recursive.
      * Recurrence Relation:
      * Pick the node with smaller value as current head h.
@@ -90,7 +98,8 @@ public class MergeKSortedList {
      * 2. l1 is null, l2 is not, return l2.
      * 3. l1 is not, l2 is null, return l1.
      * Combined: l1 is null, return l2. l2 is null, return l1.
-     */
+     *//*
+
     private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;
@@ -110,3 +119,4 @@ public class MergeKSortedList {
 
 
 }
+*/

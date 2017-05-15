@@ -87,7 +87,7 @@ class atoi {
      */
     private static final int maxDiv10 = Integer.MAX_VALUE / 10;
 
-    public int atoi(String str) {
+    /*public int atoi(String str) {
         int n = str.length();
         int i = 0;
         while (i < n && Character.isWhitespace(str.charAt(i))) i++;
@@ -108,5 +108,5 @@ class atoi {
             i++;
         }  
         return sign * num;
-    }
+    }*/
 }

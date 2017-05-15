@@ -54,7 +54,7 @@ class JumpGame {
         int len = A.length;
         int i = 0;
         for (int reach = 0; i < len && i <= reach; i++){
-            reach = max(A[i] + i, reach);
+            reach = Math.max(A[i] + i, reach);
             if (reach >= len - 1)
                 return true;
         }

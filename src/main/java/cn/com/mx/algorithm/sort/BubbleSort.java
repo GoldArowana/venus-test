@@ -1,7 +1,7 @@
 package cn.com.mx.algorithm.sort;
 
 /**
- * ц╟ещеепР
+ * ???????
  * 
  * @author William
  */

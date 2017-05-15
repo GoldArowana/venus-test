@@ -1,7 +1,9 @@
+/*
 package cn.com.mx.algorithm.lettcode;
 
 import com.freetymekiyan.algorithms.utils.Utils.ListNode;
 
+*/
 /**
  * Partition List
  * Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or
@@ -17,7 +19,8 @@ import com.freetymekiyan.algorithms.utils.Utils.ListNode;
  * Time Complexity O(n)
  *
  * @author chenshuna
- */
+ *//*
+
 class PartitionList {
 
     public static ListNode partition(ListNode head, int x) {
@@ -47,3 +50,4 @@ class PartitionList {
         return res.next;
     }
 }
+*/

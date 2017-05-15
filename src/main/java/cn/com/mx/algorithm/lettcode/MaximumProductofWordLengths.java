@@ -1,3 +1,4 @@
+/*
 package cn.com.mx.algorithm.lettcode;
 
 import org.junit.After;
@@ -7,6 +8,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
+*/
 /**
  * Given a string array words, find the maximum value of length(word[i]) * length(word[j]) where the two words do not
  * share common letters. You may assume that each word will contain only lower case letters. If no such two words
@@ -28,7 +30,8 @@ import java.util.Arrays;
  * No such pair of words.
  * <p>
  * Tags: Bit Manipulation
- */
+ *//*
+
 public class MaximumProductofWordLengths {
 
     private MaximumProductofWordLengths m;
@@ -92,3 +95,4 @@ public class MaximumProductofWordLengths {
         m = null;
     }
 }
+*/

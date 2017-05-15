@@ -6,22 +6,22 @@ import java.math.BigInteger;
 public class BigNumberTest {
 
 	public static void main(String []args) {
-		//Õâ¸öÊý×ÖlongÊÇ·Å²»ÏÂµÄ
+		//???????long?????µ?
 		BigDecimal bigDecimal = new BigDecimal("1233243243243243243243243243243243241432423432");
-		System.out.println("Êý×ÖµÄÔ­Ê¼ÖµÊÇ£º" + bigDecimal);
+		System.out.println("???????????" + bigDecimal);
 		
 		//bigDecimal = bigDecimal.add(BigDecimal.TEN);
-		//System.out.println("Ìí¼Ó10ÒÔºó£º" + bigDecimal);
+		//System.out.println("???10???" + bigDecimal);
 		
-		//¶þ½øÖÆÊý×Ö
+		//??????????
 		byte[] bytes = bigDecimal.toBigInteger().toByteArray();
 		for(byte b : bytes) {
 			String bitString = lpad(Integer.toBinaryString(b & 0xff) , '0' , 8);
 			System.out.println(bitString);
 		}
-		//»¹Ô­½á¹û
+		//??????
 		BigInteger bigInteger = new BigInteger(bytes);
-		System.out.println("»¹Ô­½á¹ûÎª£º" + bigInteger);
+		System.out.println("?????????" + bigInteger);
 	}
 	
 	private static String lpad(String end , char c , int paddingLength) {
