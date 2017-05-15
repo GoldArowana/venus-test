@@ -9,7 +9,6 @@ public class ReenterLockInt implements Runnable {
 	public static ReentrantLock lock2 = new ReentrantLock();
 	int lock;
 	/**
-	 * ���Ƽ���˳�򣬷��㹹������
 	 * @param lock
 	 */
 	public ReenterLockInt(int lock) {
@@ -40,7 +39,7 @@ public class ReenterLockInt implements Runnable {
 				lock1.unlock();
 			if (lock2.isHeldByCurrentThread())
 				lock2.unlock();
-			System.out.println(Thread.currentThread().getId()+":�߳��˳�");
+			System.out.println(Thread.currentThread().getId());
 		}
 	}
 
@@ -51,7 +50,7 @@ public class ReenterLockInt implements Runnable {
 		Thread t2 = new Thread(r2);
 		t1.start();t2.start();
 		Thread.sleep(1000);
-		//�ж�����һ���߳�
+
 		DeadlockChecker.check();
 	}
 }
