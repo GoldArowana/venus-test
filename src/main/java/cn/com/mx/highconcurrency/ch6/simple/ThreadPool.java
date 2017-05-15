@@ -7,9 +7,7 @@ public class ThreadPool
 {
     private static ThreadPool instance = null;
 
-    //���е��̶߳���
     private List<Worker> idleThreads;
-    //���е��߳�����
     private int threadCounter;
     private boolean isShutDown = false;
     
@@ -23,14 +21,12 @@ public class ThreadPool
         return threadCounter;
     }
     
-    //ȡ���̳߳ص�ʵ��
     public synchronized static ThreadPool getInstance() {
         if (instance == null)
             instance = new ThreadPool();
         return instance;
     }
    
-    //���̷߳������
     protected synchronized void repool(Worker repoolingThread)
     {
         if (!isShutDown) 
@@ -39,11 +35,10 @@ public class ThreadPool
         }
         else 
         {
-            repoolingThread.shutDown();//�ر��߳�
+            repoolingThread.shutDown();
         }
     }
         
-    //ֹͣ���������߳�
     public synchronized void shutdown()
     {
        isShutDown = true;
@@ -54,26 +49,20 @@ public class ThreadPool
        }
     }
     
-    //ִ������
     public synchronized void start(Runnable target)
     {
         Worker thread = null; 
-        //����п����̣߳���ֱ��ʹ��
-        if (idleThreads.size() > 0) 
+        if (idleThreads.size() > 0)
         {
             int lastIndex = idleThreads.size() - 1;
             thread = (Worker) idleThreads.get(lastIndex);
             idleThreads.remove(lastIndex);
-            //����ִ���������
             thread.setTarget(target);
         }
-        //û�п����̣߳��򴴽����߳�
-        else 
+        else
         { 
             threadCounter++;
-            // �������̣߳�
             thread = new Worker(target, "PThread #" + threadCounter, this);
-            //��������߳�
             thread.start();
         }
     }
