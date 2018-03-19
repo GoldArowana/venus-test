@@ -77,10 +77,30 @@ public class sortTest {
                     s[j--] = s[i];
             }
             s[i] = x;
-            quick_sort(s, l, i - 1); // 递归调用
+            quick_sort(s, l, i - 1); // 递归调用】
             quick_sort(s, i + 1, r);
         }
     }
+
+    //二分查找
+    public static  int binarySearch(Integer[] arr, int des){
+
+        int low = 0;
+        int high = arr.length - 1;
+        while (low < high){
+
+            int middle = (high + low) >>>1;
+            if (arr[middle] == des){
+                return middle;
+            }else if(arr[middle] < des){
+                low = middle + 1;
+            }else{
+                high = low -1;
+            }
+        }
+        return -1;
+    }
+
 
 
 
